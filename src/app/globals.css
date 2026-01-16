@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* ========================================
+   INDUSTRIAL DESIGN SYSTEM
+   ======================================== */
+
+:root {
+  /* Colors */
+  --bg: #050505;
+  --fg: #ffffff;
+  --fg-muted: #888888;
+  --accent: #2CF8FF;
+  --accent-glow: rgba(44, 248, 255, 0.4);
+  --border: #1a1a1a;
+
+  /* Fonts */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+
+  /* Spacing */
+  --container-padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.container-custom {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.text-reveal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.glass-nav {
+  background: rgba(5, 5, 5, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ========================================
+   LENIS SCROLL
+   ======================================== */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
