@@ -25,6 +25,7 @@ const researchProjects: ResearchProject[] = [
         description: "Researching the application of MedGemma (Google's medical AI model) to assist pathologists in analyzing tissue samples. Exploring multimodal prompting, structured report generation, and confidence scoring for clinical workflows.",
         researchAreas: ["Medical AI", "Computer Vision", "MedGemma", "Pathology", "Multimodal LLMs"],
         icon: <Microscope size={28} />,
+        liveUrl: "https://pathoassist.netlify.app/",
         githubUrl: "https://github.com/contact-ajmal/pathoassist-ui"
     },
     {
@@ -97,10 +98,10 @@ export function Research() {
                             {/* Status Badge */}
                             <div className="absolute top-6 right-6">
                                 <span className={`px-3 py-1 text-xs font-mono rounded-full border ${project.status === "Active"
-                                        ? "border-green-500/50 text-green-400 bg-green-500/10"
-                                        : project.status === "Published"
-                                            ? "border-blue-500/50 text-blue-400 bg-blue-500/10"
-                                            : "border-yellow-500/50 text-yellow-400 bg-yellow-500/10"
+                                    ? "border-green-500/50 text-green-400 bg-green-500/10"
+                                    : project.status === "Published"
+                                        ? "border-blue-500/50 text-blue-400 bg-blue-500/10"
+                                        : "border-yellow-500/50 text-yellow-400 bg-yellow-500/10"
                                     }`}>
                                     {project.status}
                                 </span>
