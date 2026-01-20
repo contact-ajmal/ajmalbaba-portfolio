@@ -39,7 +39,7 @@ export function WorkGrid() {
                                     {/* Card Image */}
                                     <div className="relative aspect-[16/10] rounded-sm overflow-hidden mb-6 bg-[var(--border)]">
                                         <Image
-                                            src={project.image}
+                                            src={typeof project.image === 'string' ? project.image : project.image.src}
                                             alt={project.title}
                                             fill
                                             className="object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-80 group-hover:opacity-100"

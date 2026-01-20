@@ -75,7 +75,7 @@ export function CaseStudyClient({ project }: { project: Project }) {
                     {/* Hero Image */}
                     <div className="relative aspect-video w-full rounded-sm overflow-hidden bg-[var(--border)]">
                         <Image
-                            src={project.image}
+                            src={typeof project.image === 'string' ? project.image : project.image.src}
                             alt={project.title}
                             fill
                             className="object-cover object-top"
