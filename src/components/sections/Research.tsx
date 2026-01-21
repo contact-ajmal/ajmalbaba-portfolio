@@ -25,7 +25,7 @@ const researchProjects: ResearchProject[] = [
         description: "Researching the application of MedGemma (Google's medical AI model) to assist pathologists in analyzing tissue samples. Exploring multimodal prompting, structured report generation, and confidence scoring for clinical workflows.",
         researchAreas: ["Medical AI", "Computer Vision", "MedGemma", "Pathology", "Multimodal LLMs"],
         icon: <Microscope size={28} />,
-        liveUrl: "https://pathoassist.netlify.app/",
+        liveUrl: "https://pathoassist.pages.dev/",
         githubUrl: "https://github.com/contact-ajmal/pathoassist-ui"
     },
     {

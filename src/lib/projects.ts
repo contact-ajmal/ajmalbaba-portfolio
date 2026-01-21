@@ -74,7 +74,7 @@ export const projects: Project[] = [
         image: "/projects/pathoassist.png",
         color: "#a855f7",
         technologies: ["React", "TypeScript", "Python", "FastAPI", "MedGemma"],
-        liveUrl: "https://pathoassist.netlify.app/",
+        liveUrl: "https://pathoassist.pages.dev/",
         githubUrl: "https://github.com/contact-ajmal/pathoassist-ui",
         problem: "Pathology image analysis is time-consuming and requires specialized expertise, with growing demand and limited specialists.",
         solution: "Building an AI assistant that uses MedGemma to analyze pathology images and generate structured preliminary reports.",
