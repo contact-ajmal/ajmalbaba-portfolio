@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ResearchProjectData } from "@/lib/research-projects";
-import { ArrowLeft, Lock, Mail, Cpu, Shield, Brain, Database, Clock, FileSearch } from "lucide-react";
+import { ArrowLeft, Lock, Linkedin, Cpu, Shield, Brain, Database, Clock, FileSearch } from "lucide-react";
 
 const componentIcons: { [key: string]: React.ReactNode } = {
     "Control Plane": <Shield size={24} />,
@@ -85,10 +85,12 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                                     {project.codeAvailability}
                                 </p>
                                 <a
-                                    href="mailto:contact@ajmal.dev?subject=VertiCore%20Research%20Inquiry"
+                                    href="https://linkedin.com/in/ajmalnazirbaba/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 mt-4 text-sm text-[var(--accent)] hover:underline"
                                 >
-                                    <Mail size={14} />
+                                    <Linkedin size={14} />
                                     Request Access
                                 </a>
                             </div>

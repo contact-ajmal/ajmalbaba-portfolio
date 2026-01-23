@@ -12,6 +12,7 @@ export interface ResearchProjectData {
     liveUrl?: string;
     githubUrl?: string;
     hasDetailPage?: boolean;
+    architectureImage?: string;
     // Extended fields for detail page
     fullDescription?: string;
     detailedSections?: {
