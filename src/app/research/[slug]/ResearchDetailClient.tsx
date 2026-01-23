@@ -101,7 +101,7 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                             initial={{ opacity: 0, scale: 0.98 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className="relative w-full rounded-lg overflow-hidden bg-white p-4 md:p-8"
+                            className="relative w-full rounded-lg overflow-hidden bg-white p-4 md:p-8 mb-16"
                         >
                             <Image
                                 src={project.architectureImage}
@@ -123,16 +123,29 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
             <section className="py-24 px-[var(--container-padding)] max-w-[1600px] mx-auto">
                 <div className="grid lg:grid-cols-3 gap-16">
 
-                    {/* Full Description */}
-                    <div className="lg:col-span-2">
-                        <h2 className="text-3xl font-bold mb-8">Overview</h2>
-                        <div className="prose prose-invert max-w-none">
-                            {project.fullDescription?.split('\n\n').map((paragraph, i) => (
-                                <p key={i} className="text-lg text-[var(--fg-muted)] leading-relaxed mb-6">
-                                    {paragraph}
-                                </p>
-                            ))}
+                    {/* Full Description & Detailed Sections */}
+                    <div className="lg:col-span-2 space-y-16">
+                        {/* Overview */}
+                        <div>
+                            <h2 className="text-3xl font-bold mb-8">Overview</h2>
+                            <div className="prose prose-invert max-w-none">
+                                {project.fullDescription?.split('\n\n').map((paragraph, i) => (
+                                    <p key={i} className="text-lg text-[var(--fg-muted)] leading-relaxed mb-6">
+                                        {paragraph}
+                                    </p>
+                                ))}
+                            </div>
                         </div>
+
+                        {/* Detailed Sections */}
+                        {project.detailedSections?.map((section, index) => (
+                            <div key={index}>
+                                <h3 className="text-2xl font-bold mb-6 text-[var(--fg)]">{section.title}</h3>
+                                <p className="text-lg text-[var(--fg-muted)] leading-relaxed">
+                                    {section.content}
+                                </p>
+                            </div>
+                        ))}
                     </div>
 
                     {/* Sidebar Info */}

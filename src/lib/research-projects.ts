@@ -14,12 +14,15 @@ export interface ResearchProjectData {
     hasDetailPage?: boolean;
     // Extended fields for detail page
     fullDescription?: string;
+    detailedSections?: {
+        title: string;
+        content: string;
+    }[];
     keyComponents?: {
         title: string;
         description: string;
         color: string;
     }[];
-    architectureImage?: string;
     codeAvailability?: string;
     year?: string;
 }
@@ -38,9 +41,21 @@ export const researchProjectsData: ResearchProjectData[] = [
         year: "2024-2025",
         fullDescription: `VertiCore is an enterprise-grade agentic AI architecture designed for production deployments where reliability, security, and compliance are non-negotiable. The framework addresses the critical gap between experimental AI agents and enterprise-ready autonomous systems.
 
-The architecture uniquely combines LangGraph for sophisticated reasoning and tool orchestration with Temporal for bullet-proof workflow durability. This hybrid approach enables agents that can reason through complex multi-step tasks while guaranteeing exactly-once execution semantics, automatic retries, and complete audit trails.
-
-Key innovations include a multi-plane architecture separating control, intelligence, and orchestration concerns; a PII vault for zero-trust data handling; and a human-in-the-loop review system that can pause workflows for approval without losing state.`,
+The architecture uniquely combines LangGraph for sophisticated reasoning and tool orchestration with Temporal for bullet-proof workflow durability. This hybrid approach enables agents that can reason through complex multi-step tasks while guaranteeing exactly-once execution semantics, automatic retries, and complete audit trails.`,
+        detailedSections: [
+            {
+                title: "Reasoning Framework Optionality",
+                content: "VertiCore decouples the reasoning engine from the execution runtime. While LangGraph is the primary driver for agentic loops, the architecture supports pluggable reasoning modules. This allows teams to switch between different cognitive architectures (e.g., ReAct, Plan-and-Solve, or custom state machines) without rewriting the underlying orchestration logic. The 'Intelligence Plane' handles the cognitive load, while the 'Control Plane' enforces policy."
+            },
+            {
+                title: "The Hybrid Execution Model",
+                content: "A core innovation of VertiCore is its hybrid execution model. Standard agent frameworks often fail in production due to transient errors or context window limits. VertiCore wraps LangGraph nodes within Temporal activities. This means every step of the agent's reasoning—every tool call, every LLM thought—is a durable, checkpointed event. If an agent crashes mid-thought, it resumes exactly where it left off, ensuring zero data loss and high reliability."
+            },
+            {
+                title: "Security & Governance",
+                content: "Security is treated as a first-class citizen, not an afterthought. The architecture implements a 'PII Vault' pattern where sensitive data is redacted before entering the LLM context and rehydrated only at the final output stage. A granular policy engine enforces role-based access control (RBAC) on tool execution, ensuring that agents can only perform actions they are explicitly authorized to do. Human-in-the-loop gates are integrated directly into the workflow state, pausing execution until a human operator provides approval."
+            }
+        ],
         keyComponents: [
             {
                 title: "Control Plane",
@@ -73,7 +88,6 @@ Key innovations include a multi-plane architecture separating control, intellige
                 color: "#06b6d4"
             }
         ],
-        architectureImage: "/research/verticore-architecture.png",
         codeAvailability: "This is a proprietary research project. Source code can be shared for academic and research purposes upon request."
     },
     {
