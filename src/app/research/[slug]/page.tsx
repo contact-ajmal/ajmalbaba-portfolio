@@ -6,8 +6,9 @@ export async function generateStaticParams() {
     return slugs.map((slug) => ({ slug }));
 }
 
-export default function ResearchProjectPage({ params }: { params: { slug: string } }) {
-    const project = getResearchProject(params.slug);
+export default async function ResearchProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const project = getResearchProject(slug);
 
     if (!project) return <div>Research project not found</div>;
 
