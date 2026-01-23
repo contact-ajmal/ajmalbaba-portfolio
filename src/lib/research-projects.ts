@@ -1,0 +1,137 @@
+import { Cpu, Shield, Layers, Database, Brain, Microscope, Activity } from "lucide-react";
+
+export interface ResearchProjectData {
+    id: string;
+    slug: string;
+    title: string;
+    tagline: string;
+    status: "Active" | "Prototype" | "Published";
+    description: string;
+    researchAreas: string[];
+    icon: string; // Icon name as string for serialization
+    liveUrl?: string;
+    githubUrl?: string;
+    hasDetailPage?: boolean;
+    // Extended fields for detail page
+    fullDescription?: string;
+    keyComponents?: {
+        title: string;
+        description: string;
+        color: string;
+    }[];
+    architectureImage?: string;
+    codeAvailability?: string;
+    year?: string;
+}
+
+export const researchProjectsData: ResearchProjectData[] = [
+    {
+        id: "verticore",
+        slug: "verticore",
+        title: "VertiCore",
+        tagline: "Enterprise Agent Architecture Framework",
+        status: "Active",
+        description: "Designing a production-grade agentic AI framework that combines LangGraph's reasoning capabilities with Temporal's durable execution for enterprise-scale autonomous systems with built-in security, compliance, and human oversight.",
+        researchAreas: ["Agentic AI", "LangGraph", "Temporal", "Enterprise Security", "Workflow Orchestration"],
+        icon: "Cpu",
+        hasDetailPage: true,
+        year: "2024-2025",
+        fullDescription: `VertiCore is an enterprise-grade agentic AI architecture designed for production deployments where reliability, security, and compliance are non-negotiable. The framework addresses the critical gap between experimental AI agents and enterprise-ready autonomous systems.
+
+The architecture uniquely combines LangGraph for sophisticated reasoning and tool orchestration with Temporal for bullet-proof workflow durability. This hybrid approach enables agents that can reason through complex multi-step tasks while guaranteeing exactly-once execution semantics, automatic retries, and complete audit trails.
+
+Key innovations include a multi-plane architecture separating control, intelligence, and orchestration concerns; a PII vault for zero-trust data handling; and a human-in-the-loop review system that can pause workflows for approval without losing state.`,
+        keyComponents: [
+            {
+                title: "Control Plane",
+                description: "Tenant management, policy engine, and PII vault for multi-tenant enterprise deployments with zero-trust security.",
+                color: "#22c55e"
+            },
+            {
+                title: "Intelligence Plane",
+                description: "LangGraph-powered reasoning engine with tool executor, PII redaction/rehydration, and output validation.",
+                color: "#a855f7"
+            },
+            {
+                title: "Temporal Orchestration",
+                description: "Durable workflow engine with persistent state, history logging, and guaranteed execution semantics.",
+                color: "#f59e0b"
+            },
+            {
+                title: "Memory Systems",
+                description: "Short-term scratchpad store for session context and long-term vector database for knowledge retrieval.",
+                color: "#3b82f6"
+            },
+            {
+                title: "Human Review",
+                description: "Workflow pause/resume capabilities for human-in-the-loop approval of sensitive operations.",
+                color: "#ef4444"
+            },
+            {
+                title: "Audit & Logging",
+                description: "Comprehensive audit logs and analytics for compliance, debugging, and performance monitoring.",
+                color: "#06b6d4"
+            }
+        ],
+        architectureImage: "/research/verticore-architecture.png",
+        codeAvailability: "This is a proprietary research project. Source code can be shared for academic and research purposes upon request."
+    },
+    {
+        id: "pathoassist",
+        slug: "pathoassist",
+        title: "PathoAssist",
+        tagline: "AI-Powered Pathology Analysis",
+        status: "Active",
+        description: "Researching the application of MedGemma (Google's medical AI model) to assist pathologists in analyzing tissue samples. Exploring multimodal prompting, structured report generation, and confidence scoring for clinical workflows.",
+        researchAreas: ["Medical AI", "Computer Vision", "MedGemma", "Pathology", "Multimodal LLMs"],
+        icon: "Microscope",
+        liveUrl: "https://pathoassist.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/pathoassist-ui"
+    },
+    {
+        id: "biomotionpro",
+        slug: "biomotionpro",
+        title: "BioMotionPro",
+        tagline: "Professional Biomechanics Analysis",
+        status: "Active",
+        description: "Developing an open-source biomechanics tool for macOS using Metal for real-time 3D skeleton rendering. Research focus includes efficient C3D/TRC file parsing, kinematics analysis, and Apple Silicon optimization.",
+        researchAreas: ["Biomechanics", "3D Visualization", "Swift/Metal", "Motion Capture", "Apple Silicon"],
+        icon: "Activity",
+        liveUrl: "https://biomotionpro.pages.dev",
+        githubUrl: "https://github.com/contact-ajmal/BioMotionPro"
+    },
+    {
+        id: "sports-analytics",
+        slug: "sports-analytics",
+        title: "Sports Intelligence Platforms",
+        tagline: "Data Architecture for 20+ Sports",
+        status: "Active",
+        description: "At Hawk-Eye Innovations, researching scalable data architectures for real-time sports analytics. Areas include ML-driven predictive insights, biomechanics tracking for athletes, and automated broadcast visualizations.",
+        researchAreas: ["Data Lakes", "Real-time Streaming", "ML Pipelines", "Sports Analytics", "Generative AI"],
+        icon: "Database"
+    },
+    {
+        id: "whatsgoingonai",
+        slug: "whatsgoingonai",
+        title: "AI Intelligence Aggregation",
+        tagline: "Research-Grade News Synthesis",
+        status: "Prototype",
+        description: "Exploring techniques to aggregate, deduplicate, and synthesize AI news from multiple sources (ArXiv, Hacker News, Techmeme, YouTube). Research includes content ranking algorithms and semantic clustering.",
+        researchAreas: ["Information Retrieval", "Content Aggregation", "NLP", "Web Scraping", "RAG"],
+        icon: "Brain",
+        liveUrl: "https://whatsgoingonai.com",
+        githubUrl: "https://github.com/contact-ajmal/whats-going-on-ai"
+    }
+];
+
+export function getResearchProject(slug: string): ResearchProjectData | undefined {
+    return researchProjectsData.find(p => p.slug === slug);
+}
+
+export function getAllResearchSlugs(): string[] {
+    return researchProjectsData.filter(p => p.hasDetailPage).map(p => p.slug);
+}
+
+export function getResearchProjectsWithDetailPages(): ResearchProjectData[] {
+    return researchProjectsData.filter(p => p.hasDetailPage);
+}
