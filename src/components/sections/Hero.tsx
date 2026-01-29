@@ -82,11 +82,11 @@ export function Hero() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.7, duration: 1 }}
                     >
-                        <a href="#work" className="group flex items-center gap-4 text-lg font-medium">
+                        <a href="/projects" className="group flex items-center gap-4 text-lg font-medium">
                             <span className="w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center group-hover:bg-[var(--fg)] group-hover:text-[var(--bg)] transition-all duration-300">
                                 ↓
                             </span>
-                            <span>Scroll for work</span>
+                            <span>Scroll for projects</span>
                         </a>
                     </motion.div>
                 </div>

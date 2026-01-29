@@ -26,39 +26,57 @@ export function About() {
                     <span className="block font-mono text-sm text-[var(--accent)] mb-6 uppercase tracking-wider">About Me</span>
 
                     <h2 className="text-[clamp(2rem,4vw,3.5rem)] leading-tight mb-8">
-                        I don't build systems.<br />
-                        <span className="text-[var(--fg-muted)]">I solve problems.</span>
+                        Enterprise Data Architect<br />
+                        <span className="text-[var(--fg-muted)]">& Research Enablement</span>
                     </h2>
 
-                    <div className="space-y-6 text-lg text-[var(--fg-muted)] max-w-2xl leading-relaxed">
+                    <div className="space-y-6 text-lg text-[var(--fg-muted)] max-w-2xl leading-relaxed mb-12">
                         <p>
-                            Every project starts with a question: <span className="text-white">What's broken, and why?</span>
-                            I research deeply, understand the root cause, and then architect a solution.
-                            Code is just the final step.
+                            I have <span className="text-white">12+ years of experience</span> designing and governing large-scale data platforms that enable research, analytics, and AI-driven discovery. currently, I define the <span className="text-white">enterprise data strategy at Hawk-Eye Innovations</span>, architecting standardized, scalable, and secure data ecosystems used across <span className="text-white">20+ major global sports platforms</span>.
                         </p>
                         <p>
-                            I believe AI is the most powerful enabler humanity has ever created — a tool that will
-                            allow us to solve problems once thought impossible. I want to be at the frontier of
-                            solutions that genuinely <span className="text-white">change lives for the better</span>.
+                            Within Hawk-Eye’s Biomechanics division, I work closely with biomechanics researchers and data science teams, enabling advanced research on high-frequency skeletal motion data. I focus on transforming raw tracking and computer vision data into trusted, analytics-ready datasets.
                         </p>
                         <p>
-                            Based in London, I work with startups and enterprises to implement Generative AI,
-                            optimize cloud architectures, and ship products that define categories.
+                            This allows researchers to experiment, derive new performance and injury-related metrics, and operationalize insights—an approach well aligned with mission-driven research organizations.
                         </p>
                     </div>
 
-                    <div className="mt-12 flex gap-12 border-t border-[var(--border)] pt-8">
+                    <div className="grid md:grid-cols-2 gap-12 border-t border-[var(--border)] pt-8">
                         <div>
-                            <span className="block text-3xl font-medium mb-1">5+</span>
-                            <span className="text-sm font-mono text-[var(--fg-muted)] uppercase">AWS Certs</span>
+                            <h3 className="text-xl font-medium mb-4 text-white">Education & Certifications</h3>
+                            <ul className="space-y-3 text-[var(--fg-muted)]">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-[var(--accent)] mt-1.5">•</span>
+                                    <span>AWS Certified Solutions Architect – Professional</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-[var(--accent)] mt-1.5">•</span>
+                                    <span>AWS Certified DevOps Engineer – Professional</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-[var(--accent)] mt-1.5">•</span>
+                                    <span>PG Diploma in Business Administration – Symbiosis</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-[var(--accent)] mt-1.5">•</span>
+                                    <span>Bachelor of Science – University of Kashmir</span>
+                                </li>
+                            </ul>
                         </div>
+
                         <div>
-                            <span className="block text-3xl font-medium mb-1">10+</span>
-                            <span className="text-sm font-mono text-[var(--fg-muted)] uppercase">Shipped Projects</span>
-                        </div>
-                        <div>
-                            <span className="block text-3xl font-medium mb-1">3K+</span>
-                            <span className="text-sm font-mono text-[var(--fg-muted)] uppercase">Followers</span>
+                            <h3 className="text-xl font-medium mb-4 text-white">Community & Leadership</h3>
+                            <ul className="space-y-3 text-[var(--fg-muted)]">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-[var(--accent)] mt-1.5">•</span>
+                                    <span>AWS Community Builder Leader – Data & Storage</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-[var(--accent)] mt-1.5">•</span>
+                                    <span>AWS User Group Leader – Qatar</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

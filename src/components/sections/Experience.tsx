@@ -14,36 +14,28 @@ interface Role {
 
 const roles: Role[] = [
     {
-        company: "Hawk-Eye Innovations Ltd",
-        title: "Architect – Data & Analytics Platforms",
+        company: "Hawk-Eye Innovations (Sony Sports)",
+        title: "Lead Data Architect – Enterprise Data Strategy & Biomechanics",
         duration: "May 2024 – Present",
-        location: "London, UK (Hybrid)",
-        description: "Leading implementation of scalable data systems for sports intelligence across 20+ sports (NBA, IPL, ATP, MLB, NHL, NFL). Integrating ML/Generative AI for predictive insights, biomechanics tracking, and automated visualizations to enhance fan experiences and team analytics.",
-        skills: ["Data Architecture", "Data Lakes", "Machine Learning", "Generative AI", "Big Data"]
+        location: "London, UK",
+        description: "Own and define the enterprise data strategy for Hawk-Eye Innovations, establishing standardized data architectures, governance models, and platform patterns adopted across all major global sports platforms. Lead the design of scalable Lakehouse data platforms supporting research, real-time analytics, and AI workflows across NFL, NHL, MLB, FIFA, NBA, and ICC programs. Act as the primary architectural partner to Biomechanics and Data Science research teams, enabling advanced research on skeletal motion and biomechanics data.",
+        skills: ["Apache Iceberg", "Apache Kafka", "Apache Flink", "AWS Lake Formation", "SageMaker", "Data Governance"]
     },
     {
-        company: "Atos",
-        title: "Cloud & Data Architect",
-        duration: "Aug 2022 – May 2024 (1 yr 10 mos)",
-        location: "London, UK (Hybrid)",
-        description: "Delivered enterprise cloud and AI solutions including ML-powered Product Fitting Systems, multi-language chatbots, and data lakes. Led cloud migrations, security architecture (IAM), and DevSecOps integrations using AWS global network architectures.",
-        skills: ["AWS SageMaker", "AWS Data Lake", "MLOps", "AWS Landing Zone", "Generative AI"]
+        company: "Atos (Cloudreach / Eviden)",
+        title: "Senior Data & Cloud Architect",
+        duration: "Aug 2022 – May 2024",
+        location: "London, UK",
+        description: "Designed and delivered a secure, enterprise-grade AWS data lake enabling analytics and AI workloads across global business units. Defined data models, metadata standards, and governance processes using AWS Lake Formation, Glue, and Informatica MDM. Architected ML and AI platforms using Amazon SageMaker and AWS Bedrock, supporting reproducible experimentation and model lifecycle management.",
+        skills: ["AWS Data Lake", "AWS Bedrock", "Informatica MDM", "Security Architecture", "SageMaker"]
     },
     {
-        company: "Qatar Public Sector",
-        title: "Systems Engineering Architect",
-        duration: "Oct 2012 – Apr 2023 (10 yrs 7 mos)",
+        company: "Ministry of Interior – Government of Qatar",
+        title: "Lead Systems & Data Infrastructure Architect",
+        duration: "Oct 2012 – Aug 2022",
         location: "Doha, Qatar",
-        description: "Architected and deployed scalable multi-platform datacenter and cloud infrastructure for the Qatar 2022 World Cup. Led DevOps adoption, secure storage, and high-availability solutions in collaboration with major tech vendors.",
-        skills: ["Private Cloud", "VMware", "System Design", "High Availability", "DevOps"]
-    },
-    {
-        company: "Sapient",
-        title: "Senior Lead Infrastructure Engineer",
-        duration: "Jan 2012 – Oct 2012 (10 mos)",
-        location: "Bangalore, India",
-        description: "Managed global enterprise IT resources, delivered identity management solutions (Active Directory federation), and authored system design and operational documentation.",
-        skills: ["Active Directory", "Identity Management", "System Design", "Documentation"]
+        description: "Led architecture for national-scale data platforms supporting security, logistics, and analytics initiatives, including FIFA World Cup 2022. Designed and managed hybrid data lake architectures, combining on-premise Hadoop ecosystems with AWS cloud storage for long-term analytics. Established data durability, lifecycle management, and disaster recovery strategies for petabyte-scale systems.",
+        skills: ["Hybrid Data Lakes", "Hadoop", "Disaster Recovery", "National Scale Platforms", "FIFA World Cup 2022"]
     }
 ];
 

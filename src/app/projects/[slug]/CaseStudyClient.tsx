@@ -19,10 +19,10 @@ export function CaseStudyClient({ project }: { project: Project }) {
             {/* Back Navigation */}
             <div className="fixed top-8 left-8 z-50 mix-blend-difference">
                 <Link
-                    href="/#work"
+                    href="/projects"
                     className="flex items-center gap-2 text-sm font-mono uppercase tracking-wider hover:text-[var(--accent)] transition-colors"
                 >
-                    <ArrowLeft size={16} /> Back to Work
+                    <ArrowLeft size={16} /> Back to Projects
                 </Link>
             </div>
 
@@ -132,7 +132,7 @@ export function CaseStudyClient({ project }: { project: Project }) {
 
             {/* Footer Navigation */}
             <section className="py-32 border-t border-[var(--border)] text-center">
-                <Link href="/#work" className="inline-block group">
+                <Link href="/projects" className="inline-block group">
                     <span className="block text-[var(--fg-muted)] mb-2 text-sm uppercase tracking-widest">Next</span>
                     <span className="text-4xl md:text-6xl font-medium group-hover:text-[var(--accent)] transition-colors">
                         View All Works

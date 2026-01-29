@@ -14,31 +14,31 @@ interface SkillCategory {
 const categories: SkillCategory[] = [
     {
         id: "data",
-        title: "Data Architecture",
+        title: "Data Architecture & Strategy",
         icon: <Database size={32} />,
-        description: "Designing scalable data platforms for real-time analytics.",
-        skills: ["Data Lakes", "Data Pipelines", "Real-time Streaming", "ETL/ELT", "Big Data", "Supabase", "DynamoDB", "S3"]
+        description: "Designing scalable data platforms for research and analytics.",
+        skills: ["Apache Iceberg", "Apache Kafka", "Apache Flink", "Lakehouse", "Data Governance", "AWS Glue", "Data Modeling"]
     },
     {
         id: "ai",
-        title: "AI & Machine Learning",
+        title: "AI & ML Enablement",
         icon: <Brain size={32} />,
-        description: "Building intelligent agents and generative AI systems.",
-        skills: ["Generative AI", "MedGemma", "LLMs", "MLOps", "TensorFlow", "Computer Vision", "FastAPI"]
+        description: "Building platforms for predictive analytics and AI-driven discovery.",
+        skills: ["Amazon SageMaker", "Feature Stores", "Predictive Analytics", "Computer Vision Datasets", "Generative AI", "MLOps"]
+    },
+    {
+        id: "domain",
+        title: "Biomechanics & Sports",
+        icon: <Globe size={32} />,
+        description: "Enablement of high-frequency skeletal motion data research.",
+        skills: ["Skeletal Tracking", "Motion Capture", "Time-Series Data", "Injury Analytics", "Performance Metrics", "Research Pipelines"]
     },
     {
         id: "cloud",
-        title: "Cloud Platforms",
+        title: "Cloud & Security Service",
         icon: <Cloud size={32} />,
-        description: "Architecting resilient, cloud-native solutions.",
-        skills: ["AWS", "AWS SageMaker", "Lambda", "CloudFormation", "Step Functions", "Serverless", "Kubernetes"]
-    },
-    {
-        id: "dev",
-        title: "Full-Stack Development",
-        icon: <Code size={32} />,
-        description: "End-to-end application development with modern stacks.",
-        skills: ["React", "TypeScript", "Next.js", "Swift", "SwiftUI", "Metal", "Python", "Framer Motion"]
+        description: "Architecting secure, cloud-native data ecosystems.",
+        skills: ["AWS Solutions Architect", "IAM", "Lake Formation", "Security-by-Design", "Disaster Recovery", "Hybrid Cloud"]
     }
 ];
 
