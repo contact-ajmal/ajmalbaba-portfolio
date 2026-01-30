@@ -30,6 +30,18 @@ export interface ResearchProjectData {
 
 export const researchProjectsData: ResearchProjectData[] = [
     {
+        id: "genome-ai",
+        slug: "genome-ai",
+        title: "Genome×AI",
+        tagline: "Decoding Humanity - AI × Human GENOME",
+        status: "Active",
+        description: "Investigating the intersection of artificial intelligence and genomic science. Building interactive simulations to visualize how deep learning models interpret DNA sequences and variant pathogenicity.",
+        researchAreas: ["Genomics", "Deep Learning", "Bioinformatics", "Education"],
+        icon: "Microscope",
+        liveUrl: "https://genome-ai.pages.dev/",
+        hasDetailPage: false
+    },
+    {
         id: "verticore",
         slug: "verticore",
         title: "VertiCore",

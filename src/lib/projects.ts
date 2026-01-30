@@ -18,6 +18,28 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "4",
+        slug: "genome-ai",
+        title: "Genome×AI",
+        tagline: "Decoding Humanity - AI × Human GENOME",
+        description: "An educational journey through genomics and artificial intelligence. Learn how AI is revolutionizing our understanding of DNA and transforming medicine.",
+        category: "Web Application / Education",
+        year: "2024",
+        image: "/projects/genome-ai.png",
+        color: "#3b82f6",
+        technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "Cloudflare Pages"],
+        liveUrl: "https://genome-ai.pages.dev/",
+        problem: "The intersection of AI and genomics is complex and often inaccessible to the general public, despite its growing importance in personalized medicine.",
+        solution: "Created an interactive educational platform that visualizes genomic analysis pipelines, neural network processing of DNA, and variant impact scoring in an intuitive, engaging way.",
+        features: [
+            "Genomic Analysis Pipeline Simulation",
+            "Neural Network Visualization",
+            "Variant Impact Scoring",
+            "Interactive Educational Modules",
+            "Real-time Genomic Stats"
+        ]
+    },
+    {
         id: "1",
         slug: "whatsgoingonai",
         title: "WhatsGoingOn.AI",
@@ -84,28 +106,6 @@ export const projects: Project[] = [
             "Structured report generation",
             "Confidence scoring",
             "Pathologist review workflow"
-        ]
-    },
-    {
-        id: "4",
-        slug: "genome-ai",
-        title: "Genome×AI",
-        tagline: "Decoding Humanity - AI × Human GENOME",
-        description: "An educational journey through genomics and artificial intelligence. Learn how AI is revolutionizing our understanding of DNA and transforming medicine.",
-        category: "Web Application / Education",
-        year: "2024",
-        image: "/projects/genome-ai.png",
-        color: "#3b82f6",
-        technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "Cloudflare Pages"],
-        liveUrl: "https://genome-ai.pages.dev/",
-        problem: "The intersection of AI and genomics is complex and often inaccessible to the general public, despite its growing importance in personalized medicine.",
-        solution: "Created an interactive educational platform that visualizes genomic analysis pipelines, neural network processing of DNA, and variant impact scoring in an intuitive, engaging way.",
-        features: [
-            "Genomic Analysis Pipeline Simulation",
-            "Neural Network Visualization",
-            "Variant Impact Scoring",
-            "Interactive Educational Modules",
-            "Real-time Genomic Stats"
         ]
     }
 ];
