@@ -13,7 +13,7 @@ export function Footer() {
                 {/* Top Section: CTA & Email */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 mb-20">
                     <div>
-                        <h2 className="text-3xl font-medium tracking-tight mb-2 text-white">Let's work together</h2>
+                        <h2 className="text-3xl font-medium tracking-tight mb-2 text-white">Let's Build together</h2>
                         <p className="text-[var(--fg-muted)] text-lg">Have a project in mind?</p>
                     </div>
 
