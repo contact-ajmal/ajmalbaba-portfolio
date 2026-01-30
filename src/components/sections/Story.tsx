@@ -7,7 +7,7 @@ const milestones = [
     {
         year: "2012",
         title: "The Foundation",
-        description: "Started as a Systems Engineer, building enterprise infrastructure across the Middle East.",
+        description: "Started as a Systems & Data Infrastructure Architect, building enterprise infrastructure across the Middle East.",
         icon: <Cpu size={24} />,
     },
     {

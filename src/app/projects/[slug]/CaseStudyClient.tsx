@@ -22,7 +22,7 @@ export function CaseStudyClient({ project }: { project: Project }) {
                     href="/projects"
                     className="flex items-center gap-2 text-sm font-mono uppercase tracking-wider hover:text-[var(--accent)] transition-colors"
                 >
-                    <ArrowLeft size={16} /> Back to Projects
+                    <ArrowLeft size={16} /> Back to Personal Projects
                 </Link>
             </div>
 

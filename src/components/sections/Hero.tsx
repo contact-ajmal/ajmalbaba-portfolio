@@ -86,7 +86,7 @@ export function Hero() {
                             <span className="w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center group-hover:bg-[var(--fg)] group-hover:text-[var(--bg)] transition-all duration-300">
                                 ↓
                             </span>
-                            <span>Scroll for projects</span>
+                            <span>Scroll for Personal Projects</span>
                         </a>
                     </motion.div>
                 </div>

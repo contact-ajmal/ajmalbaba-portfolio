@@ -10,6 +10,10 @@ interface Role {
     location: string;
     description: string;
     skills: string[];
+    keyProjects?: {
+        name: string;
+        description: string;
+    }[];
 }
 
 const roles: Role[] = [
@@ -19,7 +23,33 @@ const roles: Role[] = [
         duration: "May 2024 – Present",
         location: "London, UK",
         description: "Own and define the enterprise data strategy for Hawk-Eye Innovations, establishing standardized data architectures, governance models, and platform patterns adopted across all major global sports platforms. Lead the design of scalable Lakehouse data platforms supporting research, real-time analytics, and AI workflows across NFL, NHL, MLB, FIFA, NBA, and ICC programs. Act as the primary architectural partner to Biomechanics and Data Science research teams, enabling advanced research on skeletal motion and biomechanics data.",
-        skills: ["Apache Iceberg", "Apache Kafka", "Apache Flink", "AWS Lake Formation", "SageMaker", "Data Governance"]
+        skills: ["Apache Iceberg", "Apache Kafka", "Apache Flink", "AWS Lake Formation", "SageMaker", "Data Governance"],
+        keyProjects: [
+            {
+                name: "Real-Time Biomechanics Lakehouse",
+                description: "Designed the Flink-Kafka-Iceberg backbone to process sub-second skeletal tracking (SkeleTRACK) and MLB pitch data for live broadcast."
+            },
+            {
+                name: "Semi-Automated Offside Tech (SAOT)",
+                description: "Architected the data pipeline powering FIFA’s offside detection, processing 29-point skeletal models in real-time across 900+ matches globally."
+            },
+            {
+                name: "NHL Insights Platform",
+                description: "Built the \"Insight Ports\" architecture that transforms live game telemetry into real-time visualizations for teams, fans, and broadcasters."
+            },
+            {
+                name: "KinaTrax 3D Integration",
+                description: "Led the data integration of markerless motion capture (Computer Vision) to drive NBA player development and shooting analytics."
+            },
+            {
+                name: "SMART Video Review System",
+                description: "Engineered the synchronized data/video capture framework used for VAR (Football) and DRS (Cricket) independent officiating."
+            },
+            {
+                name: "Medical & Injury Review",
+                description: "Developed the \"Injury Review\" data workflow, allowing medical teams to instantly tag, zoom, and archive multi-angle video for athlete safety."
+            }
+        ]
     },
     {
         company: "Atos (Cloudreach / Eviden)",
@@ -27,7 +57,13 @@ const roles: Role[] = [
         duration: "Aug 2022 – May 2024",
         location: "London, UK",
         description: "Designed and delivered a secure, enterprise-grade AWS data lake enabling analytics and AI workloads across global business units. Defined data models, metadata standards, and governance processes using AWS Lake Formation, Glue, and Informatica MDM. Architected ML and AI platforms using Amazon SageMaker and AWS Bedrock, supporting reproducible experimentation and model lifecycle management.",
-        skills: ["AWS Data Lake", "AWS Bedrock", "Informatica MDM", "Security Architecture", "SageMaker"]
+        skills: ["AWS Data Lake", "AWS Bedrock", "Informatica MDM", "Security Architecture", "SageMaker"],
+        keyProjects: [
+            {
+                name: "ATOS Data Lake & MLOps",
+                description: "Architected a secure AWS Data Lake and GenAI platform (SageMaker/Bedrock), enabling global master data governance and rapid model deployment."
+            }
+        ]
     },
     {
         company: "Ministry of Interior – Government of Qatar",
@@ -35,7 +71,13 @@ const roles: Role[] = [
         duration: "Oct 2012 – Aug 2022",
         location: "Doha, Qatar",
         description: "Led architecture for national-scale data platforms supporting security, logistics, and analytics initiatives, including FIFA World Cup 2022. Designed and managed hybrid data lake architectures, combining on-premise Hadoop ecosystems with AWS cloud storage for long-term analytics. Established data durability, lifecycle management, and disaster recovery strategies for petabyte-scale systems.",
-        skills: ["Hybrid Data Lakes", "Hadoop", "Disaster Recovery", "National Scale Platforms", "FIFA World Cup 2022"]
+        skills: ["Hybrid Data Lakes", "Hadoop", "Disaster Recovery", "National Scale Platforms", "FIFA World Cup 2022"],
+        keyProjects: [
+            {
+                name: "FIFA World Cup 2022 Infrastructure",
+                description: "Built the $200M hybrid data infrastructure (Hadoop/AWS) ensuring 100% uptime for national security and logistics during the event."
+            }
+        ]
     }
 ];
 
@@ -94,6 +136,24 @@ export function Experience() {
                                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
                                     {role.description}
                                 </p>
+
+                                {role.keyProjects && role.keyProjects.length > 0 && (
+                                    <div className="mb-8">
+                                        <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-[var(--border)] pb-2 inline-block">
+                                            Key Projects & Initiatives
+                                        </h4>
+                                        <div className="grid gap-4">
+                                            {role.keyProjects.map((project, i) => (
+                                                <div key={i} className="relative pl-4 border-l-2 border-[var(--border)] hover:border-[var(--accent)] transition-colors">
+                                                    <h5 className="text-white font-medium text-sm mb-1">{project.name}</h5>
+                                                    <p className="text-sm text-[var(--fg-muted)] leading-relaxed">
+                                                        {project.description}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                                 <div className="flex flex-wrap gap-2">
                                     {role.skills.map((skill, i) => (
                                         <span key={i} className="px-3 py-1 text-xs font-mono border border-[var(--border)] bg-black/50 rounded-full text-[var(--fg-muted)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all">
