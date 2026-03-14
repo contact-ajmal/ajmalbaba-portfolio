@@ -40,6 +40,30 @@ export const projects: Project[] = [
         ]
     },
     {
+        id: "5",
+        slug: "genemapr",
+        title: "GeneMapr",
+        tagline: "Genomic Variant Interpretation Platform",
+        description: "A comprehensive platform to parse, annotate, and interpret genomic variants from VCF files. Integrates ClinVar, gnomAD, and Ensembl with AI-powered clinical summaries via Google DeepMind's AlphaGenome.",
+        category: "Healthcare AI",
+        year: "2025",
+        image: "/projects/genemapr.png",
+        color: "#06b6d4",
+        technologies: ["React", "TypeScript", "Python", "FastAPI", "AlphaGenome", "PostgreSQL", "Docker"],
+        liveUrl: "https://genemapr.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/GeneMapr",
+        problem: "Clinical variant interpretation from VCF files is complex and time-consuming, requiring cross-referencing multiple genomic databases and manual analysis by specialists.",
+        solution: "Built a unified platform that automates VCF parsing, multi-source annotation (ClinVar, gnomAD, Ensembl), pharmacogenomic profiling, and AI-driven clinical reporting powered by AlphaGenome.",
+        features: [
+            "VCF upload & high-performance parsing via pysam",
+            "Multi-source annotation (ClinVar, gnomAD, Ensembl)",
+            "AlphaGenome AI variant effect predictions",
+            "Pharmacogenomic profiling & drug-gene interactions",
+            "Automated risk scoring engine",
+            "Clinical-grade report generation"
+        ]
+    },
+    {
         id: "1",
         slug: "whatsgoingonai",
         title: "WhatsGoingOn.AI",

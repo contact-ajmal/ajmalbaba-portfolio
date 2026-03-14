@@ -42,6 +42,18 @@ export const researchProjectsData: ResearchProjectData[] = [
         hasDetailPage: false
     },
     {
+        id: "genemapr",
+        slug: "genemapr",
+        title: "GeneMapr",
+        tagline: "Genomic Variant Interpretation Platform",
+        status: "Active",
+        description: "Building a clinical-grade platform for genomic variant interpretation. Combines VCF parsing with multi-database annotation (ClinVar, gnomAD, Ensembl) and Google DeepMind's AlphaGenome for AI-powered variant effect predictions and pharmacogenomic profiling.",
+        researchAreas: ["Genomics", "AlphaGenome", "Clinical AI", "Pharmacogenomics", "Bioinformatics", "FastAPI"],
+        icon: "Layers",
+        liveUrl: "https://genemapr.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/GeneMapr"
+    },
+    {
         id: "verticore",
         slug: "verticore",
         title: "VertiCore",
