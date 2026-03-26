@@ -95,7 +95,7 @@ export const projects: Project[] = [
         category: "Healthcare AI",
         year: "2024",
         image: "/projects/genexplor.png",
-        color: "#e8a087",
+        color: "#cbd5e1",
         technologies: ["React", "TypeScript", "Tailwind CSS", "AlphaFold", "Cloudflare Pages"],
         liveUrl: "https://genexplor.pages.dev/",
         githubUrl: "https://github.com/contact-ajmal/geneXplor",
