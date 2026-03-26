@@ -128,16 +128,16 @@ The architecture uniquely combines LangGraph for sophisticated reasoning and too
         githubUrl: "https://github.com/contact-ajmal/pathoassist-ui"
     },
     {
-        id: "biomotionpro",
-        slug: "biomotionpro",
-        title: "BioMotionPro",
-        tagline: "Professional Biomechanics Analysis",
+        id: "genexplor",
+        slug: "genexplor",
+        title: "GeneXplor",
+        tagline: "Genomic Discovery Platform",
         status: "Active",
-        description: "Developing an open-source biomechanics tool for macOS using Metal for real-time 3D skeleton rendering. Research focus includes efficient C3D/TRC file parsing, kinematics analysis, and Apple Silicon optimization.",
-        researchAreas: ["Biomechanics", "3D Visualization", "Swift/Metal", "Motion Capture", "Apple Silicon"],
+        description: "A comprehensive platform unifying genomic coordinates, clinical assertions, and predictive structural biology (AlphaFold) to accelerate clinical genetic interpretation.",
+        researchAreas: ["Genomics", "Structural Biology", "AlphaFold", "Clinical AI", "Data Integration"],
         icon: "Activity",
-        liveUrl: "https://biomotionpro.pages.dev",
-        githubUrl: "https://github.com/contact-ajmal/BioMotionPro"
+        liveUrl: "https://genexplor.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/geneXplor"
     },
     {
         id: "sports-analytics",
