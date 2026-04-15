@@ -40,6 +40,29 @@ export const projects: Project[] = [
         ]
     },
     {
+        id: "6",
+        slug: "opendde",
+        title: "OpenDDE",
+        tagline: "Open-source AI-powered drug design platform",
+        description: "From protein target to druggable pocket to molecular prediction — in minutes, not months. Built on AlphaFold 3, P2Rank, and the latest open-source computational biology tools.",
+        category: "Computational Biology",
+        year: "2025",
+        image: "/projects/opendde.png",
+        color: "#22c55e",
+        technologies: ["React", "TypeScript", "AlphaFold 3", "P2Rank", "CHEMBL", "RDKit", "OpenTargets", "Cloudflare Pages"],
+        liveUrl: "https://opendde.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/OpenDDE",
+        problem: "Drug discovery is slow, expensive, and siloed — it takes years to go from a protein target to a viable drug candidate, with researchers forced to use disparate tools across different databases.",
+        solution: "Built an open-source platform that unifies the entire drug design pipeline: from protein structure prediction (AlphaFold 3) and pocket detection (P2Rank) to molecular docking and drug database integration — all in one workspace.",
+        features: [
+            "Protein structure prediction via AlphaFold 3",
+            "Druggable pocket detection with P2Rank",
+            "Integration with CHEMBL & OpenTargets drug databases",
+            "Molecular prediction & docking workflows",
+            "100% open-source MIT license"
+        ]
+    },
+    {
         id: "5",
         slug: "genemapr",
         title: "GeneMapr",

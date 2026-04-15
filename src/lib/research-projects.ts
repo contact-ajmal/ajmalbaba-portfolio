@@ -128,6 +128,18 @@ The architecture uniquely combines LangGraph for sophisticated reasoning and too
         githubUrl: "https://github.com/contact-ajmal/pathoassist-ui"
     },
     {
+        id: "opendde",
+        slug: "opendde",
+        title: "OpenDDE",
+        tagline: "Open-source AI-Powered Drug Design",
+        status: "Active",
+        description: "Researching the application of AlphaFold 3 and computational docking tools to democratise drug discovery. Exploring how open-source tools (P2Rank, RDKit, CHEMBL) can be unified into a single end-to-end pipeline from protein target identification to molecular prediction.",
+        researchAreas: ["Drug Discovery", "AlphaFold 3", "Computational Biology", "Molecular Docking", "Bioinformatics"],
+        icon: "Cpu",
+        liveUrl: "https://opendde.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/OpenDDE"
+    },
+    {
         id: "genexplor",
         slug: "genexplor",
         title: "GeneXplor",
