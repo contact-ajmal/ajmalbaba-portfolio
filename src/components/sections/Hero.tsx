@@ -46,14 +46,14 @@ export function Hero() {
             {/* Text Content - Right Aligned */}
             <div className="max-w-[900px] w-full relative z-10 lg:pl-[20vw]">
                 {/* Main Headline */}
-                <h1 className="text-[clamp(3.5rem,8vw,8rem)] leading-[0.9] font-[500] tracking-tight mb-12 text-right lg:text-left">
+                <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.1] font-[500] tracking-tight mb-12 text-right lg:text-left">
                     <motion.span
                         initial={{ y: "100%", clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
                         animate={{ y: 0, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="block"
                     >
-                        Data Platform Builder
+                        Data Platform <span className="text-[var(--accent)]">Builder</span>
                     </motion.span>
                     <motion.span
                         initial={{ y: "100%", clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
