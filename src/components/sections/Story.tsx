@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Cpu, Rocket, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const milestones = [
     {
@@ -152,13 +153,13 @@ export function Story() {
 
                     {/* CTA */}
                     <div className="mt-12 flex justify-center">
-                        <a
-                            href="/work"
+                        <Link
+                            href="/projects"
                             className="group flex items-center gap-3 px-8 py-4 bg-[var(--accent)] text-black font-bold rounded-full hover:bg-white transition-colors"
                         >
                             See What I've Built
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </Link>
                     </div>
                 </motion.div>
             </div>
