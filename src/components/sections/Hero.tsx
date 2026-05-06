@@ -53,7 +53,7 @@ export function Hero() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="block"
                     >
-                        Data Platform <span className="text-[var(--accent)]">Builder</span>
+                        Data Platform
                     </motion.span>
                     <motion.span
                         initial={{ y: "100%", clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
@@ -61,7 +61,7 @@ export function Hero() {
                         transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         className="block text-[var(--fg-muted)]"
                     >
-                        & Analytics Leader
+                        & Analytics <span className="text-[var(--accent)]">Architect</span>
                     </motion.span>
                 </h1>
 
