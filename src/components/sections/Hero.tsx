@@ -53,7 +53,7 @@ export function Hero() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="block"
                     >
-                        Problem Solver
+                        Data Platform Builder
                     </motion.span>
                     <motion.span
                         initial={{ y: "100%", clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
@@ -61,7 +61,7 @@ export function Hero() {
                         transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         className="block text-[var(--fg-muted)]"
                     >
-                        AI & Data Architect
+                        & Analytics Leader
                     </motion.span>
                 </h1>
 
@@ -73,8 +73,8 @@ export function Hero() {
                         transition={{ delay: 0.5, duration: 1 }}
                         className="max-w-xl text-lg md:text-xl text-[var(--fg-muted)] leading-relaxed text-right lg:text-left"
                     >
-                        I research problems, architect <span className="text-[var(--fg)]">AI-powered solutions</span>,
-                        and build data platforms that transform how industries operate.
+                        I founded and lead high-performance <span className="text-[var(--fg)]">data platform teams</span>, 
+                        architecting scalable infrastructure and AI-driven analytics that turn complex data into industry-defining intelligence.
                     </motion.p>
 
                     <motion.div

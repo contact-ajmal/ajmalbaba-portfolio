@@ -19,8 +19,8 @@ const milestones = [
     },
     {
         year: "Now",
-        title: "Data & AI Platform Architect",
-        description: "At Hawk-Eye Innovations, architecting data platforms for 20+ major sports (NBA, NFL, Premier League). Integrating ML/Generative AI for predictive insights while launching AI-native side projects with 'Vibe Coding' — using AI Agents to build at 10x speed.",
+        title: "Founding Data & AI Architect",
+        description: "Leading the data platform team at Hawk-Eye Innovations, architecting the analytical foundation for 20+ major sports (NBA, NFL, Premier League). We turn millions of real-time data points into predictive insights, integrating Generative AI to push the boundaries of sports analytics.",
         icon: <Sparkles size={24} />,
     },
 ];
@@ -46,14 +46,13 @@ export function Story() {
                         The Philosophy
                     </span>
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-                        Research First.
+                        Data as Foundation.
                         <br />
-                        <span className="text-[var(--fg-muted)]">Then Build.</span>
+                        <span className="text-[var(--fg-muted)]">AI as Catalyst.</span>
                     </h2>
                     <p className="text-xl text-[var(--fg-muted)] max-w-2xl leading-relaxed">
-                        I don't just develop applications — I <span className="text-white">solve problems</span>.
-                        Every project starts with deep research. AI isn't just a tool; it's an enabler
-                        that will allow humanity to tackle challenges once thought impossible.
+                        I don't just build pipelines — I build the <span className="text-white">teams and platforms</span> that power them.
+                        Every project starts with a deep understanding of the data landscape, enabling us to tackle analytical challenges once thought impossible.
                     </p>
                 </motion.div>
 
