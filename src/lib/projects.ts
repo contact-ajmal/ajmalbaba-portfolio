@@ -18,6 +18,30 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "7",
+        slug: "datacrawlr",
+        title: "Datacrawlr",
+        tagline: "The dataset and model intelligence layer",
+        description: "Datacrawlr indexes every dataset and every open or commercial model worth knowing about — schemas, licenses, benchmark scores, pricing, and the link between the two. Metadata only — we point you to the source.",
+        category: "AI / ML Tooling",
+        year: "2025",
+        image: "/projects/datacrawlr.png",
+        color: "#5eead4",
+        technologies: ["Next.js", "TypeScript", "OpenSearch", "PostgreSQL", "Cloudflare Pages", "AI Synthesis"],
+        liveUrl: "https://datacrawlr.pages.dev/",
+        githubUrl: "https://github.com/datacrawlr/datacrawlr",
+        problem: "The open ML ecosystem is fragmented — HuggingFace knows about HuggingFace, Kaggle knows about Kaggle, and every government portal knows about itself. There's no single place to ask which dataset to train on and which model to use it with.",
+        solution: "Built the discovery layer that closes the loop — datasets and the models trained on them, in one searchable index. Semantic search with AI synthesis, model-dataset lineage graphs, and benchmark leaderboards across the entire open ML ecosystem.",
+        features: [
+            "Semantic search with AI synthesis cards and citations",
+            "Model-dataset lineage graph (trained-on / fine-tuned-on / evaluated-on)",
+            "Benchmark leaderboards (MMLU-Pro and more)",
+            "9+ dataset sources (HuggingFace, Kaggle, GitHub, gov portals)",
+            "Model directory with pricing, licensing, and benchmark scores",
+            "Filters by modality, license, source, and freshness"
+        ]
+    },
+    {
         id: "6",
         slug: "opendde",
         title: "OpenDDE",
