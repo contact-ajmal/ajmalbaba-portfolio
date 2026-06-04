@@ -18,6 +18,29 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "8",
+        slug: "cortexshield",
+        title: "CortexShield",
+        tagline: "Enterprise LLM Safeguards & Telemetry Platform",
+        description: "A developer-first telemetric pipeline that secures, monitors, and safeguards enterprise LLM applications against jailbreaks, prompt injections, coordinated Sybil campaigns, and agentic tool-call exploits.",
+        category: "AI Security",
+        year: "2025",
+        image: "/projects/cortexshield.png",
+        color: "#d97757",
+        technologies: ["React", "TypeScript", "Python", "PostgreSQL", "TF-IDF Clustering", "Vite", "Cloudflare Pages"],
+        liveUrl: "https://cortexshield.pages.dev/",
+        problem: "Enterprise LLM applications are vulnerable to adversarial attacks — jailbreaks bypass alignment, coordinated Sybil campaigns probe for exploits across hundreds of accounts, and autonomous agents can be hijacked via indirect prompt injections embedded in external data.",
+        solution: "Built an end-to-end telemetry and enforcement pipeline that intercepts LLM interactions in real-time, runs deterministic safety scoring with dynamic language confidence scaling, detects coordinated abuse campaigns via agglomerative TF-IDF clustering, and validates agentic tool-call chains against dangerous state transitions.",
+        features: [
+            "Real-time jailbreak detection with multi-turn escalation tracking",
+            "Sybil campaign clustering via TF-IDF vectorization & z-score anomaly detection",
+            "Agentic plan validation — intercepts dangerous tool-call transitions",
+            "Dynamic language confidence scaling for multilingual & code-switching attacks",
+            "Over-refusal optimization separating malicious from legitimate academic queries",
+            "Policy sandbox for testing custom enforcement rules"
+        ]
+    },
+    {
         id: "7",
         slug: "datacrawlr",
         title: "Datacrawlr",

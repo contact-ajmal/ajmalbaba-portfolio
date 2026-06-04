@@ -30,6 +30,73 @@ export interface ResearchProjectData {
 
 export const researchProjectsData: ResearchProjectData[] = [
     {
+        id: "cortexshield",
+        slug: "cortexshield",
+        title: "CortexShield",
+        tagline: "Enterprise LLM Safeguards & Telemetry",
+        status: "Active",
+        description: "Researching adversarial attack detection and mitigation for enterprise LLM applications. Developing novel approaches for dynamic language confidence scaling, stateful multi-turn escalation defense, Sybil campaign clustering via TF-IDF, and agentic tool-call chain validation to secure production AI workloads.",
+        researchAreas: ["LLM Safety", "Prompt Injection", "Sybil Detection", "Agentic Security", "Adversarial ML", "NLP"],
+        icon: "Shield",
+        liveUrl: "https://cortexshield.pages.dev/",
+        hasDetailPage: true,
+        year: "2025",
+        fullDescription: `CortexShield is a research-driven enterprise LLM safety platform that addresses the critical blind spots in current AI guardrail systems. Traditional safety classifiers are stateless, English-centric, and blind to coordinated multi-account attacks. CortexShield introduces four novel research methodologies — dynamic language confidence scaling, stateful session escalation tracking, agglomerative TF-IDF Sybil campaign clustering, and agentic state transition validation — to create a comprehensive defense layer for production LLM deployments.
+
+The platform operates as a telemetric pipeline: intercepting LLM interactions at the API gateway, running parallel enrichment scoring, and enforcing policy decisions in real-time without adding latency to the model serving path.`,
+        detailedSections: [
+            {
+                title: "The Low-Resource Language & Code-Switching Blind Spot",
+                content: "Traditional safety classifiers are trained almost exclusively on English and high-resource languages. Adversarial prompts translated into low-resource languages (Hindi, Arabic, Swahili) or mixed via code-switching routinely bypass safety checkpoints. CortexShield introduces a dynamic language_confidence coefficient that dampens the safety classifier's confidence score when code-switching or low-resource language signatures are detected, automatically forcing the system into strict enforcement mode."
+            },
+            {
+                title: "Stateful Multi-Turn Session Escalation",
+                content: "Single-turn safety checks are stateless. Adversaries exploit this by constructing multi-turn interactions — beginning with benign queries to establish context, then incrementally adjusting or escalating their prompts until the model complies. CortexShield tracks state across conversational turns, logging repeat attempts, query reformulations, and conversational transitions. The evaluation engine integrates a session context penalty that dynamically amplifies the threat score based on escalation aggressiveness."
+            },
+            {
+                title: "Coordinated Sybil Campaign Clustering",
+                content: "Large-scale bad actors execute coordinated campaigns using hundreds of unique accounts to conduct distributed red-teaming. Traditional rate-limiters are blind to this because each user generates low-volume traffic. CortexShield's analytics engine groups prompt semantic vectors in real-time using TF-IDF vectorization and agglomerative clustering algorithms. When the volume of a semantic cluster spikes (measured by z-score anomaly detection), the system flags it as a coordinated campaign and raises alerts."
+            },
+            {
+                title: "Agentic State Transition Safeguards",
+                content: "As LLMs are integrated as autonomous agents with tool-calling capabilities, they become vulnerable to indirect prompt injections embedded in external data. CortexShield inspects agentic tool plans before dispatch, constructing a dynamic state transition graph and checking for dangerous transitions — for example, if an agent attempts to read sensitive user context (emails) and transition directly to an outbound mutation (Slack post, HTTP call), the scoring engine intercepts and flags an injection risk."
+            }
+        ],
+        keyComponents: [
+            {
+                title: "Enrichment Scoring Pipeline",
+                description: "Parallel analysis against deterministic rules, heuristics, and semantic embeddings for real-time threat classification.",
+                color: "#5eead4"
+            },
+            {
+                title: "Sybil Campaign Detector",
+                description: "TF-IDF vectorization with agglomerative clustering and z-score anomaly detection for distributed attack identification.",
+                color: "#a855f7"
+            },
+            {
+                title: "Agentic Plan Validator",
+                description: "Dynamic state transition graph analysis intercepting dangerous tool-call sequences before external dispatch.",
+                color: "#f59e0b"
+            },
+            {
+                title: "Language Confidence Engine",
+                description: "Dynamic confidence coefficient scaling for low-resource language and code-switching evasion defense.",
+                color: "#3b82f6"
+            },
+            {
+                title: "Session Escalation Tracker",
+                description: "Stateful multi-turn tracking with context penalty amplification for progressive steerage attacks.",
+                color: "#ef4444"
+            },
+            {
+                title: "Policy Sandbox",
+                description: "Interactive testing environment for custom enforcement rules and threshold tuning against adversarial scenarios.",
+                color: "#d97757"
+            }
+        ],
+        codeAvailability: "CortexShield is an open research project. The platform and policy sandbox are available at cortexshield.pages.dev."
+    },
+    {
         id: "opendde",
         slug: "opendde",
         title: "OpenDDE",

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Microscope, Brain, Activity, Database, Cpu } from "lucide-react";
+import { Microscope, Brain, Activity, Database, Cpu, Shield } from "lucide-react";
 import Link from "next/link";
 import { researchProjectsData } from "@/lib/research-projects";
 
@@ -10,7 +10,8 @@ const iconMap: { [key: string]: React.ReactNode } = {
     Brain: <Brain size={28} />,
     Activity: <Activity size={28} />,
     Database: <Database size={28} />,
-    Cpu: <Cpu size={28} />
+    Cpu: <Cpu size={28} />,
+    Shield: <Shield size={28} />
 };
 
 export function Research() {
