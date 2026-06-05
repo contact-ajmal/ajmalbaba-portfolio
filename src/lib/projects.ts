@@ -65,6 +65,30 @@ export const projects: Project[] = [
         ]
     },
     {
+        id: "9",
+        slug: "claudecodeplaybook",
+        title: "ClaudeCode Playbook",
+        tagline: "An independent interactive guide to Claude Code",
+        description: "An interactive playbook for the Claude Code CLI. Every concept comes with something to toggle, drag, type, or trigger — because you remember what you operate, not what you read.",
+        category: "Developer Education",
+        year: "2025",
+        image: "/projects/claudecodeplaybook.png",
+        color: "#f59e0b",
+        technologies: ["React", "TypeScript", "Framer Motion", "React Router", "Vite", "Cloudflare Pages"],
+        liveUrl: "https://claudecodeplaybook.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/ClaudeCodePlaybook",
+        problem: "Claude Code is a powerful agentic CLI, but its extensibility model — CLAUDE.md, subagents, hooks, MCP, plugins, and headless automation — is scattered across docs and hard to learn without hands-on experimentation.",
+        solution: "Built a fully interactive documentation site where every concept has a live component: terminal emulators, config builders, hook pipeline visualizers, and a playground sandbox. Difficulty-tiered paths (Beginner → Power User) let developers learn at their own pace.",
+        features: [
+            "Live terminal emulators simulating real Claude Code sessions",
+            "Interactive CLAUDE.md config builder with live preview",
+            "Hook pipeline visualizer for lifecycle event chaining",
+            "Subagent delegation patterns with visual workflows",
+            "MCP server integration guides with interactive examples",
+            "Progress tracking with checkpoint completion across all chapters"
+        ]
+    },
+    {
         id: "6",
         slug: "opendde",
         title: "OpenDDE",
