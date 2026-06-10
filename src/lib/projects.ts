@@ -18,6 +18,30 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "10",
+        slug: "architectflow",
+        title: "ArchitectFlow",
+        tagline: "The data & AI architecture studio",
+        description: "ArchitectFlow interviews you about your constraints, scores every data and AI architecture pattern transparently, and hands back the winning design as a live, cloud-adaptive diagram plus a full document pack.",
+        category: "Data Architecture",
+        year: "2025",
+        image: "/projects/architectflow.png",
+        color: "#06b6d4",
+        technologies: ["React", "TypeScript", "Zustand", "Framer Motion", "React Router", "Vite", "Cloudflare Pages"],
+        liveUrl: "https://architectflow.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/ArchitectFlow",
+        problem: "Choosing the right data architecture — Lakehouse, Mesh, Fabric, Lambda, Kappa, or a GenAI/vector stack — requires weighing dozens of constraints (volume, velocity, team shape, latency, compliance) that most teams evaluate informally or not at all.",
+        solution: "Built a deterministic constraint-driven recommendation engine that runs an adaptive interview, scores every pattern with a transparent fit %, names the runner-up and the exact answers that would flip the call, then renders a cloud-adaptive architecture diagram with exportable blueprints.",
+        features: [
+            "Adaptive interview branching on volume, velocity, latency, compliance & team shape",
+            "Deterministic scoring engine — every point traces to an answer, no black box",
+            "Cloud-adaptive diagrams that relabel to AWS, Azure, GCP, or on-prem services",
+            "Editable diagram nodes with drag-to-rearrange and component add/remove",
+            "Exportable deliverable pack — architecture brief, tech-stack spec, cost sizing (SVG, PNG, Markdown, PDF)",
+            "20+ architecture patterns across data platforms, mesh/fabric, streaming, and GenAI/agentic systems"
+        ]
+    },
+    {
         id: "8",
         slug: "cortexshield",
         title: "CortexShield",
