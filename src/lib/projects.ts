@@ -65,6 +65,30 @@ export const projects: Project[] = [
         ]
     },
     {
+        id: "11",
+        slug: "orbitaldatacenter",
+        title: "AI1 Orbital Compute",
+        tagline: "Interactive 3D simulation of SpaceX's orbital GPU constellation",
+        description: "A real-time WebGL visualization of the AI1 orbital data center program — laser-linked compute satellites in sun-synchronous orbit, Starship deployment sequences, and a full telemetry HUD. Built with Three.js and real orbital mechanics.",
+        category: "3D Visualization / Space",
+        year: "2025",
+        image: "/projects/orbitaldatacenter.png",
+        color: "#22d3ee",
+        technologies: ["React", "Three.js", "React Three Fiber", "Zustand", "Satellite.js", "Tailwind CSS", "Vite", "Cloudflare Pages"],
+        liveUrl: "https://orbitaldatacenter.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/OrbitalDataCenter",
+        problem: "SpaceX and xAI announced plans for a constellation of orbital data-center satellites — but there's no way to visualize how such a system would actually look, behave, or operate in orbit at scale.",
+        solution: "Built an immersive real-time 3D simulation with physically accurate sun-synchronous orbital mechanics, Starship Pez-style deployment sequences, laser inter-satellite link mesh routing, and a mission-control HUD displaying live telemetry, compute load, power generation, and constellation status.",
+        features: [
+            "Photorealistic Earth with 8K/16K NASA textures (day, night, clouds, topography)",
+            "Physically accurate sun-synchronous orbital mechanics at 97.5° inclination",
+            "Starship V3 ascent & Pez-style satellite deployment animation",
+            "Laser inter-satellite link mesh with real-time routing visualization",
+            "Live telemetry HUD — altitude, velocity, compute load, power stats",
+            "Photo mode with shareable permalink state & constellation economics panel"
+        ]
+    },
+    {
         id: "7",
         slug: "datacrawlr",
         title: "Datacrawlr",
