@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Layers, GitBranch, Cloud, BarChart3, Search, Database, Link2, Sparkles } from "lucide-react";
+import { ArrowUpRight, Layers, GitBranch, Cloud, BarChart3, Search, Database, Link2, Sparkles, Cpu, Shield, Lock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { type ReactNode } from "react";
@@ -18,6 +18,7 @@ interface FeaturedProjectData {
     image: string;
     liveUrl: string;
     ctaLabel: string;
+    icon: ReactNode;
     accent: {
         text: string;
         bg: string;
@@ -39,6 +40,7 @@ const featuredProjects: FeaturedProjectData[] = [
         slug: "architectflow",
         title: "ArchitectFlow",
         tagline: "The data & AI architecture studio",
+        icon: <Layers size={20} />,
         narrative: (
             <>
                 After years of designing data platforms and leading architecture decisions across sports, healthcare, and enterprise — I built the tool I wished existed.{" "}
@@ -74,9 +76,49 @@ const featuredProjects: FeaturedProjectData[] = [
         },
     },
     {
+        slug: "verticore",
+        title: "VertiCore",
+        tagline: "Enterprise Agent Architecture Framework",
+        icon: <Cpu size={20} />,
+        narrative: (
+            <>
+                Standard AI agent frameworks fail in production due to transient errors and lack of governance.{" "}
+                <span className="text-[var(--fg)]">
+                    VertiCore decouples intelligence from execution by combining LangGraph reasoning with Temporal durable workflows
+                </span>{" "}
+                to build resilient, audit-ready autonomous systems with built-in RBAC and PII protection.
+            </>
+        ),
+        pills: ["LangGraph", "Temporal", "Durable Workflows", "PII Vault", "OPA / Rego", "RBAC", "gRPC"],
+        highlights: [
+            { icon: <Cpu size={20} />, label: "Dual-Engine", description: "Brain + Body" },
+            { icon: <Shield size={20} />, label: "PII Vault", description: "Zero-leak redaction" },
+            { icon: <GitBranch size={20} />, label: "Durable State", description: "Temporal workflow" },
+            { icon: <Lock size={20} />, label: "Policy Engine", description: "OPA / Rego RBAC" },
+        ],
+        image: "/projects/verticore.png",
+        liveUrl: "https://github.com/teamverticore/verticore",
+        ctaLabel: "View on GitHub",
+        accent: {
+            text: "text-purple-400",
+            bg: "bg-purple-500/15",
+            border: "border-purple-500/30",
+            pill: "text-purple-300",
+            pillBg: "bg-purple-500/10",
+            pillBorder: "border-purple-500/25",
+            btnBg: "bg-purple-500",
+            btnHover: "hover:bg-purple-400",
+            glowFrom: "group-hover:from-purple-500/5",
+            glowTo: "group-hover:to-purple-500/5",
+            hoverBorder: "hover:border-purple-500/40",
+            glow: "bg-purple-500",
+        },
+    },
+    {
         slug: "datacrawlr",
         title: "Datacrawlr",
         tagline: "The dataset and model intelligence layer",
+        icon: <Database size={20} />,
         narrative: (
             <>
                 Building ML systems means choosing the right data — but the ecosystem is fragmented across HuggingFace, Kaggle, GitHub, and dozens of government portals.{" "}
@@ -133,7 +175,7 @@ function FeaturedCard({ project, index }: { project: FeaturedProjectData; index:
                         {/* Title block */}
                         <div className="flex items-center gap-3 mb-6">
                             <div className={`w-10 h-10 rounded-lg ${accent.bg} ${accent.border} border flex items-center justify-center ${accent.text}`}>
-                                {project.slug === "architectflow" ? <Layers size={20} /> : <Database size={20} />}
+                                {project.icon}
                             </div>
                             <div>
                                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
