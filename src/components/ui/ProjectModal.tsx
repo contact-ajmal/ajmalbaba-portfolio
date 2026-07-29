@@ -102,7 +102,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                                 <div className="pt-6 border-t border-[#222]">
                                     <div className="flex flex-wrap gap-2">
                                         {project.technologies.map(tech => (
-                                            <span key={tech} className="px-2 py-1 bg-[#151515] border border-[#333] rounded text-[10px] text-[#888 uppercase tracking-wider">
+                                            <span key={tech} className="px-2 py-1 bg-[#151515] border border-[#333] rounded text-[10px] text-[#888] uppercase tracking-wider">
                                                 {tech}
                                             </span>
                                         ))}
@@ -128,9 +128,9 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center gap-2 py-3 border border-[#333] text-[#888] text-xs font-medium uppercase tracking-widest hover:text-white hover:border-white transition-colors"
+                                        className="flex-1 flex items-center justify-center gap-2 py-3 border border-[#333] text-[#aaa] text-xs font-medium uppercase tracking-widest hover:text-white hover:border-[var(--accent)] hover:bg-white/5 transition-colors"
                                     >
-                                        <Github size={14} /> View Code
+                                        <Github size={14} /> View Code on GitHub ↗
                                     </a>
                                 )}
                             </div>

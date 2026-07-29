@@ -143,6 +143,7 @@ The platform operates as a telemetric pipeline: intercepting LLM interactions at
         icon: "Cpu",
         hasDetailPage: true,
         year: "2024-2025",
+        githubUrl: "https://github.com/teamverticore/verticore",
         fullDescription: `VertiCore is an enterprise-grade agentic AI architecture designed for production deployments where reliability, security, and compliance are non-negotiable. The framework addresses the critical gap between experimental AI agents and enterprise-ready autonomous systems.
 
 The architecture uniquely combines LangGraph for sophisticated reasoning and tool orchestration with Temporal for bullet-proof workflow durability. This hybrid approach enables agents that can reason through complex multi-step tasks while guaranteeing exactly-once execution semantics, automatic retries, and complete audit trails.`,

@@ -23,9 +23,10 @@ export function WorkGrid() {
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                     {projects.map((project, idx) => {
-                        const MainLink = project.liveUrl ? "a" : "div";
-                        const mainLinkProps = project.liveUrl
-                            ? { href: project.liveUrl, target: "_blank", rel: "noopener noreferrer" }
+                        const targetUrl = project.liveUrl || project.githubUrl;
+                        const MainLink = targetUrl ? "a" : "div";
+                        const mainLinkProps = targetUrl
+                            ? { href: targetUrl, target: "_blank", rel: "noopener noreferrer" }
                             : { onClick: () => setSelectedProject(project), className: "cursor-pointer" };
 
                         return (
@@ -48,9 +49,9 @@ export function WorkGrid() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
 
                                         {/* Hover Visit Icon */}
-                                        {project.liveUrl && (
+                                        {targetUrl && (
                                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                                <div className="h-16 w-16 flex items-center justify-center bg-[rgba(5,5,5,0.8)] backdrop-blur border border-[var(--border)] rounded-full text-[var(--fg)] hover:bg-[var(--accent)] hover:text-black transition-colors">
+                                                <div className="h-16 w-16 flex items-center justify-center bg-[rgba(5,5,5,0.8)] backdrop-blur border border-[var(--border)] rounded-full text-[var(--fg)] hover:bg-[var(--accent)] hover:text-black transition-colors font-sans">
                                                     ↗
                                                 </div>
                                             </div>
@@ -67,8 +68,18 @@ export function WorkGrid() {
                                     </div>
                                 </MainLink>
 
-                                {/* Secondary Action: Open Summary Modal */}
-                                <div className="mt-4 flex justify-end">
+                                {/* Actions: GitHub Link & Summary Modal */}
+                                <div className="mt-4 flex items-center justify-between">
+                                    {project.githubUrl ? (
+                                        <a
+                                            href={project.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)] flex items-center gap-1"
+                                        >
+                                            [ GitHub Repo ↗ ]
+                                        </a>
+                                    ) : <span />}
                                     <button
                                         onClick={() => setSelectedProject(project)}
                                         className="text-xs font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)] text-left"
