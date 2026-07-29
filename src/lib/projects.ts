@@ -213,9 +213,10 @@ export const projects: Project[] = [
         description: "A production-grade agentic AI framework that combines LangGraph's reasoning capabilities with Temporal's durable execution for enterprise-scale autonomous systems with built-in security, compliance, and human oversight.",
         category: "Agentic AI / Enterprise",
         year: "2024-2025",
-        image: "/projects/verticore.jpg",
+        image: "/projects/verticore.png",
         color: "#a855f7",
-        technologies: ["Python", "LangGraph", "Temporal", "PostgreSQL", "Vector DB", "Docker", "RBAC"],
+        technologies: ["Python", "Go", "TypeScript", "LangGraph", "Temporal", "PostgreSQL", "Qdrant", "Docker", "OPA", "gRPC"],
+        githubUrl: "https://github.com/teamverticore/verticore",
         problem: "Standard agent frameworks fail in production — transient errors lose context, there's no audit trail, no PII protection, and no way to enforce role-based access on tool execution. The gap between experimental AI agents and enterprise-ready autonomous systems is massive.",
         solution: "Designed a hybrid architecture that wraps LangGraph reasoning nodes within Temporal durable activities, giving every agent step exactly-once execution semantics, automatic retries, and complete audit trails. A separate Control Plane enforces RBAC, PII redaction, and human-in-the-loop gates.",
         features: [
