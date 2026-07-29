@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Layers, GitBranch, Cloud, BarChart3, Search, Database, Link2, Sparkles, Cpu, Shield, Lock } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import { getProject, Project } from "@/lib/projects";
+import { ProjectModal } from "@/components/ui/ProjectModal";
 
 /* ── Project data ─────────────────────────────────────────── */
 
@@ -157,7 +158,15 @@ const featuredProjects: FeaturedProjectData[] = [
 
 /* ── Reusable card ────────────────────────────────────────── */
 
-function FeaturedCard({ project, index }: { project: FeaturedProjectData; index: number }) {
+function FeaturedCard({
+    project,
+    index,
+    onSelectProject,
+}: {
+    project: FeaturedProjectData;
+    index: number;
+    onSelectProject: (slug: string) => void;
+}) {
     const { accent } = project;
 
     return (
@@ -237,17 +246,18 @@ function FeaturedCard({ project, index }: { project: FeaturedProjectData; index:
                             {project.ctaLabel}
                             <ArrowUpRight size={16} />
                         </a>
-                        <Link
-                            href={`/projects/${project.slug}`}
-                            className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] rounded-full text-sm font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--fg-muted)] transition-colors"
+                        <button
+                            type="button"
+                            onClick={() => onSelectProject(project.slug)}
+                            className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] rounded-full text-sm font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--fg-muted)] transition-colors cursor-pointer"
                         >
                             View Project Details
-                        </Link>
+                        </button>
                     </div>
                 </div>
 
                 {/* Right — Preview Image */}
-                <div className="relative hidden lg:block">
+                <div className="relative hidden lg:block cursor-pointer" onClick={() => onSelectProject(project.slug)}>
                     <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[var(--bg)]/80 z-10" />
                     <Image
                         src={project.image}
@@ -269,6 +279,15 @@ function FeaturedCard({ project, index }: { project: FeaturedProjectData; index:
 /* ── Section ──────────────────────────────────────────────── */
 
 export function FeaturedProject() {
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+    const handleSelectProject = (slug: string) => {
+        const proj = getProject(slug);
+        if (proj) {
+            setSelectedProject(proj);
+        }
+    };
+
     return (
         <section className="py-24 px-[var(--container-padding)] relative overflow-hidden">
             {/* Background accents */}
@@ -297,10 +316,22 @@ export function FeaturedProject() {
                 {/* Project cards */}
                 <div className="space-y-10">
                     {featuredProjects.map((project, index) => (
-                        <FeaturedCard key={project.slug} project={project} index={index} />
+                        <FeaturedCard
+                            key={project.slug}
+                            project={project}
+                            index={index}
+                            onSelectProject={handleSelectProject}
+                        />
                     ))}
                 </div>
             </div>
+
+            {/* Project Modal */}
+            <ProjectModal
+                project={selectedProject}
+                isOpen={!!selectedProject}
+                onClose={() => setSelectedProject(null)}
+            />
         </section>
     );
 }
