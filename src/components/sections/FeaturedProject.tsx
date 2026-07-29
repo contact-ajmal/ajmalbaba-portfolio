@@ -187,7 +187,10 @@ function FeaturedCard({
                                 {project.icon}
                             </div>
                             <div>
-                                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+                                <h3
+                                    className="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer hover:text-[var(--accent)] transition-colors"
+                                    onClick={() => onSelectProject(project.slug)}
+                                >
                                     {project.title}
                                 </h3>
                                 <span className="text-sm text-[var(--fg-muted)] font-mono">
@@ -249,9 +252,9 @@ function FeaturedCard({
                         <button
                             type="button"
                             onClick={() => onSelectProject(project.slug)}
-                            className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] rounded-full text-sm font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--fg-muted)] transition-colors cursor-pointer"
+                            className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] rounded-full text-sm font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--fg-muted)] hover:bg-white/5 transition-colors cursor-pointer"
                         >
-                            View Project Details
+                            View Summary & Details ↗
                         </button>
                     </div>
                 </div>
@@ -289,10 +292,12 @@ export function FeaturedProject() {
     };
 
     return (
-        <section className="py-24 px-[var(--container-padding)] relative overflow-hidden">
-            {/* Background accents */}
-            <div className="absolute top-[30%] left-[40%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500 opacity-[0.03] blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-[20%] right-[30%] w-[600px] h-[600px] bg-teal-500 opacity-[0.03] blur-[150px] rounded-full pointer-events-none" />
+        <section className="py-24 px-[var(--container-padding)] relative">
+            {/* Background accents container */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[30%] left-[40%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500 opacity-[0.03] blur-[150px] rounded-full" />
+                <div className="absolute bottom-[20%] right-[30%] w-[600px] h-[600px] bg-teal-500 opacity-[0.03] blur-[150px] rounded-full" />
+            </div>
 
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* Section eyebrow */}
