@@ -15,8 +15,8 @@ export function WorkGrid() {
                 {/* Section Header */}
                 <div className="flex items-end justify-between mb-16 px-2">
                     <div>
-                        <h2 className="text-[clamp(2.5rem,5vw,4rem)] leading-none mb-2">Personal Projects</h2>
-                        <span className="block text-[var(--fg-muted)] font-mono text-sm uppercase tracking-widest">Creative Engineering / R&D</span>
+                        <h2 className="text-[clamp(2.5rem,5vw,4rem)] leading-none mb-2 font-bold text-[var(--fg)]">Personal Projects</h2>
+                        <span className="block text-[var(--fg-muted)] font-mono text-sm uppercase tracking-widest font-semibold">Creative Engineering / R&D</span>
                     </div>
                 </div>
 
@@ -38,20 +38,20 @@ export function WorkGrid() {
                                     className="block"
                                 >
                                     {/* Card Image */}
-                                    <div className="relative aspect-[16/10] rounded-sm overflow-hidden mb-6 bg-[var(--border)]">
+                                    <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-[var(--bg-subtle)] border border-[var(--border)] shadow-sm">
                                         <Image
                                             src={typeof project.image === 'string' ? project.image : project.image.src}
                                             alt={project.title}
                                             fill
-                                            className="object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                                            className="object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105"
                                         />
-                                        {/* Overlay Gradient */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
+                                        {/* Subtle theme-friendly overlay on hover only */}
+                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                                         {/* Hover Visit Icon */}
                                         {targetUrl && (
-                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                                <div className="h-16 w-16 flex items-center justify-center bg-[rgba(5,5,5,0.8)] backdrop-blur border border-[var(--border)] rounded-full text-[var(--fg)] hover:bg-[var(--accent)] hover:text-black transition-colors font-sans">
+                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 pointer-events-none">
+                                                <div className="h-14 w-14 flex items-center justify-center bg-[var(--bg-card)]/90 backdrop-blur border border-[var(--border)] rounded-full text-[var(--fg)] group-hover:bg-[var(--accent)] group-hover:text-black transition-colors font-sans text-xl shadow-lg">
                                                     ↗
                                                 </div>
                                             </div>
@@ -61,7 +61,7 @@ export function WorkGrid() {
                                     {/* Card Info */}
                                     <div className="border-t border-[var(--border)] pt-4 flex justify-between items-start group-hover:border-[var(--accent)] transition-colors duration-500">
                                         <div>
-                                            <h3 className="text-2xl font-medium mb-1 group-hover:translate-x-2 transition-transform duration-500">{project.title}</h3>
+                                            <h3 className="text-2xl font-bold mb-1 text-[var(--fg)] group-hover:translate-x-2 transition-transform duration-500">{project.title}</h3>
                                             <p className="text-[var(--fg-muted)] text-sm">{project.tagline}</p>
                                         </div>
                                         <span className="text-xs font-mono text-[var(--fg-muted)] uppercase tracking-wider">{project.category}</span>
@@ -75,14 +75,14 @@ export function WorkGrid() {
                                             href={project.githubUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-xs font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)] flex items-center gap-1"
+                                            className="text-xs font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)] flex items-center gap-1 font-medium"
                                         >
                                             [ GitHub Repo ↗ ]
                                         </a>
                                     ) : <span />}
                                     <button
                                         onClick={() => setSelectedProject(project)}
-                                        className="text-xs font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)] text-left"
+                                        className="text-xs font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)] text-left font-medium cursor-pointer"
                                     >
                                         [ Read Summary ]
                                     </button>

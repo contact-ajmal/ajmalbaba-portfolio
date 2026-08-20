@@ -9,7 +9,7 @@ export function About() {
 
                 {/* Image Side */}
                 <div className="lg:col-span-5 relative">
-                    <div className="relative aspect-[3/4] rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-[var(--border)] shadow-md">
+                    <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-[var(--border)] shadow-md bg-[var(--bg-card)]">
                         <Image
                             src="/ajmal-dark.png"
                             alt="Ajmal Baba"
@@ -18,7 +18,7 @@ export function About() {
                         />
                     </div>
                     {/* Decorative Elements */}
-                    <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-[var(--border)] rounded-br-lg pointer-events-none" />
+                    <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-[var(--border)] rounded-br-xl pointer-events-none" />
                 </div>
 
                 {/* Content Side */}

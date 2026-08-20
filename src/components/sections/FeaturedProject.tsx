@@ -45,7 +45,7 @@ const featuredProjects: FeaturedProjectData[] = [
         narrative: (
             <>
                 After years of designing data platforms and leading architecture decisions across sports, healthcare, and enterprise — I built the tool I wished existed.{" "}
-                <span className="text-[var(--fg)]">
+                <span className="text-[var(--fg)] font-medium">
                     ArchitectFlow turns real-world constraints into a scored, auditable architecture recommendation
                 </span>{" "}
                 with cloud-adaptive diagrams you can export and defend.
@@ -62,10 +62,10 @@ const featuredProjects: FeaturedProjectData[] = [
         liveUrl: "https://architectflow.pages.dev/",
         ctaLabel: "Design Your Architecture",
         accent: {
-            text: "text-cyan-400",
-            bg: "bg-cyan-500/15",
+            text: "text-cyan-600 dark:text-cyan-400",
+            bg: "bg-cyan-500/10 dark:bg-cyan-500/15",
             border: "border-cyan-500/30",
-            pill: "text-cyan-300",
+            pill: "text-cyan-700 dark:text-cyan-300",
             pillBg: "bg-cyan-500/10",
             pillBorder: "border-cyan-500/25",
             btnBg: "bg-cyan-500",
@@ -84,7 +84,7 @@ const featuredProjects: FeaturedProjectData[] = [
         narrative: (
             <>
                 Moving AI assistants from naive prototypes to enterprise production requires mastering 9 distinct architectural stages.{" "}
-                <span className="text-[var(--fg)]">
+                <span className="text-[var(--fg)] font-medium">
                     GenArchitect is an interactive field guide tracking the Meridian enterprise scenario across RAG patterns, AgentCore Gateway, and Strands agents
                 </span>{" "}
                 with interactive blueprints, verified code samples, and production guardrails.
@@ -101,10 +101,10 @@ const featuredProjects: FeaturedProjectData[] = [
         liveUrl: "https://gen-architect.pages.dev/",
         ctaLabel: "Explore GenArchitect Field Guide",
         accent: {
-            text: "text-indigo-400",
-            bg: "bg-indigo-500/15",
+            text: "text-indigo-600 dark:text-indigo-400",
+            bg: "bg-indigo-500/10 dark:bg-indigo-500/15",
             border: "border-indigo-500/30",
-            pill: "text-indigo-300",
+            pill: "text-indigo-700 dark:text-indigo-300",
             pillBg: "bg-indigo-500/10",
             pillBorder: "border-indigo-500/25",
             btnBg: "bg-indigo-500",
@@ -123,7 +123,7 @@ const featuredProjects: FeaturedProjectData[] = [
         narrative: (
             <>
                 Standard AI agent frameworks fail in production due to transient errors and lack of governance.{" "}
-                <span className="text-[var(--fg)]">
+                <span className="text-[var(--fg)] font-medium">
                     VertiCore decouples intelligence from execution by combining LangGraph reasoning with Temporal durable workflows
                 </span>{" "}
                 to build resilient, audit-ready autonomous systems with built-in RBAC and PII protection.
@@ -140,10 +140,10 @@ const featuredProjects: FeaturedProjectData[] = [
         liveUrl: "https://github.com/teamverticore/verticore",
         ctaLabel: "View on GitHub",
         accent: {
-            text: "text-purple-400",
-            bg: "bg-purple-500/15",
+            text: "text-purple-600 dark:text-purple-400",
+            bg: "bg-purple-500/10 dark:bg-purple-500/15",
             border: "border-purple-500/30",
-            pill: "text-purple-300",
+            pill: "text-purple-700 dark:text-purple-300",
             pillBg: "bg-purple-500/10",
             pillBorder: "border-purple-500/25",
             btnBg: "bg-purple-500",
@@ -162,7 +162,7 @@ const featuredProjects: FeaturedProjectData[] = [
         narrative: (
             <>
                 Building ML systems means choosing the right data — but the ecosystem is fragmented across HuggingFace, Kaggle, GitHub, and dozens of government portals.{" "}
-                <span className="text-[var(--fg)]">
+                <span className="text-[var(--fg)] font-medium">
                     Datacrawlr unifies every dataset and every model into a single searchable index
                 </span>{" "}
                 with semantic search, AI synthesis, and model-dataset lineage graphs.
@@ -179,10 +179,10 @@ const featuredProjects: FeaturedProjectData[] = [
         liveUrl: "https://datacrawlr.pages.dev/",
         ctaLabel: "Explore Datasets & Models",
         accent: {
-            text: "text-teal-400",
-            bg: "bg-teal-500/15",
+            text: "text-teal-600 dark:text-teal-400",
+            bg: "bg-teal-500/10 dark:bg-teal-500/15",
             border: "border-teal-500/30",
-            pill: "text-teal-300",
+            pill: "text-teal-700 dark:text-teal-300",
             pillBg: "bg-teal-500/10",
             pillBorder: "border-teal-500/25",
             btnBg: "bg-teal-500",
@@ -214,7 +214,7 @@ function FeaturedCard({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className={`group relative rounded-2xl border border-[var(--border)] bg-white/[0.03] backdrop-blur-sm overflow-hidden ${accent.hoverBorder} transition-colors duration-500`}
+            className={`group relative rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] shadow-sm overflow-hidden ${accent.hoverBorder} transition-colors duration-500`}
         >
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
                 {/* Left — Content */}
@@ -227,7 +227,7 @@ function FeaturedCard({
                             </div>
                             <div>
                                 <h3
-                                    className="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer hover:text-[var(--accent)] transition-colors"
+                                    className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--fg)] cursor-pointer hover:text-[var(--accent)] transition-colors"
                                     onClick={() => onSelectProject(project.slug)}
                                 >
                                     {project.title}
@@ -251,7 +251,7 @@ function FeaturedCard({
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.1 + i * 0.05 }}
-                                    className={`px-3 py-1.5 text-xs font-mono rounded-full border ${accent.pillBorder} ${accent.pillBg} ${accent.pill} tracking-wide`}
+                                    className={`px-3 py-1.5 text-xs font-mono rounded-full border ${accent.pillBorder} ${accent.pillBg} ${accent.pill} tracking-wide font-medium`}
                                 >
                                     {pill}
                                 </motion.span>
@@ -267,7 +267,7 @@ function FeaturedCard({
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.3 + i * 0.08 }}
-                                    className="p-3 rounded-lg bg-white/[0.03] border border-[var(--border)]"
+                                    className="p-3 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border)]"
                                 >
                                     <div className={`${accent.text} mb-2`}>{h.icon}</div>
                                     <div className="text-sm font-semibold text-[var(--fg)]">{h.label}</div>
@@ -283,7 +283,7 @@ function FeaturedCard({
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`inline-flex items-center gap-2 px-6 py-3 ${accent.btnBg} text-black font-bold rounded-full ${accent.btnHover} transition-colors text-sm`}
+                            className={`inline-flex items-center gap-2 px-6 py-3 ${accent.btnBg} text-black font-bold rounded-full ${accent.btnHover} transition-colors text-sm shadow-sm`}
                         >
                             {project.ctaLabel}
                             <ArrowUpRight size={16} />
@@ -291,7 +291,7 @@ function FeaturedCard({
                         <button
                             type="button"
                             onClick={() => onSelectProject(project.slug)}
-                            className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] rounded-full text-sm font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--fg-muted)] hover:bg-white/5 transition-colors cursor-pointer"
+                            className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] bg-[var(--bg-card)] rounded-full text-sm font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--fg-muted)] hover:bg-[var(--bg-subtle)] transition-colors cursor-pointer"
                         >
                             View Summary & Details ↗
                         </button>
@@ -299,16 +299,13 @@ function FeaturedCard({
                 </div>
 
                 {/* Right — Preview Image */}
-                <div className="relative hidden lg:block cursor-pointer" onClick={() => onSelectProject(project.slug)}>
-                    <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[var(--bg)]/80 z-10" />
+                <div className="relative hidden lg:block cursor-pointer bg-[var(--bg-subtle)]" onClick={() => onSelectProject(project.slug)}>
                     <Image
                         src={project.image}
                         alt={`${project.title} — ${project.tagline}`}
                         fill
-                        className="object-cover object-left-top"
+                        className="object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.02]"
                     />
-                    {/* Bottom fade */}
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--bg)] to-transparent z-10" />
                 </div>
             </div>
 
@@ -332,12 +329,6 @@ export function FeaturedProject() {
 
     return (
         <section className="py-24 px-[var(--container-padding)] relative">
-            {/* Background accents container */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[30%] left-[40%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500 opacity-[0.03] blur-[150px] rounded-full" />
-                <div className="absolute bottom-[20%] right-[30%] w-[600px] h-[600px] bg-teal-500 opacity-[0.03] blur-[150px] rounded-full" />
-            </div>
-
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* Section eyebrow */}
                 <motion.div
@@ -346,10 +337,10 @@ export function FeaturedProject() {
                     viewport={{ once: true }}
                     className="mb-10"
                 >
-                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase">
+                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase font-semibold">
                         Featured Projects
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-3">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-3 text-[var(--fg)]">
                         Built from the <span className="text-[var(--accent)]">Architect&apos;s Seat</span>
                     </h2>
                     <p className="text-lg text-[var(--fg-muted)] mt-3 max-w-2xl leading-relaxed">
