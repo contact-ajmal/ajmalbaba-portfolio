@@ -18,6 +18,30 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "13",
+        slug: "genarchitect",
+        title: "GenArchitect",
+        tagline: "Field Guide to Enterprise RAG & AWS AgentCore",
+        description: "An interactive field guide to RAG architectures, the Meridian enterprise scenario, and building production agents with AWS Bedrock, AgentCore, and Strands Agents SDK.",
+        category: "AI Architecture",
+        year: "2025",
+        image: "/projects/genarchitect.png",
+        color: "#6366f1",
+        technologies: ["React", "TypeScript", "AWS Bedrock", "AgentCore", "Strands SDK", "OpenSearch", "Neptune", "Tailwind CSS", "Vite", "Cloudflare Pages"],
+        liveUrl: "https://gen-architect.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/GenArchitect",
+        problem: "Moving AI assistants from prototype to enterprise production requires navigating 9 distinct architectural stages — from naive embeddings to multi-hop agent loops, hybrid retrieval, graph traversal, and document-level ACL enforcement.",
+        solution: "Built an interactive visual field guide tracking the Meridian scenario through 9 architectural stages with component data flows, runnable Strands/Bedrock code samples, tradeoff analyses, and AgentCore deployment guides.",
+        features: [
+            "9 interactive architecture blueprints across RAG & AgentCore patterns",
+            "Meridian enterprise scenario tracking evolution from prototype to production",
+            "Verified code samples for Bedrock KB, Strands Agents SDK & AgentCore Runtime",
+            "Hybrid retrieval + cross-encoder reranking precision pipeline visualizer",
+            "GraphRAG relationship traversal with Amazon Neptune Analytics",
+            "Guardrails, document-level ACLs, and AgentCore Observability / Evaluations"
+        ]
+    },
+    {
         id: "10",
         slug: "architectflow",
         title: "ArchitectFlow",

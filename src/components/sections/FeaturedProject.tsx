@@ -77,6 +77,45 @@ const featuredProjects: FeaturedProjectData[] = [
         },
     },
     {
+        slug: "genarchitect",
+        title: "GenArchitect",
+        tagline: "Field Guide to Enterprise RAG & AWS AgentCore",
+        icon: <Sparkles size={20} />,
+        narrative: (
+            <>
+                Moving AI assistants from naive prototypes to enterprise production requires mastering 9 distinct architectural stages.{" "}
+                <span className="text-[var(--fg)]">
+                    GenArchitect is an interactive field guide tracking the Meridian enterprise scenario across RAG patterns, AgentCore Gateway, and Strands agents
+                </span>{" "}
+                with interactive blueprints, verified code samples, and production guardrails.
+            </>
+        ),
+        pills: ["AWS Bedrock", "AgentCore", "Strands SDK", "Knowledge Bases", "Hybrid + Rerank", "GraphRAG", "Multi-Agent"],
+        highlights: [
+            { icon: <Layers size={20} />, label: "9 Patterns", description: "From Naive to Secure" },
+            { icon: <Cloud size={20} />, label: "AWS AgentCore", description: "Gateway & Runtime" },
+            { icon: <GitBranch size={20} />, label: "Multi-Agent", description: "Supervisors & gates" },
+            { icon: <Shield size={20} />, label: "Guardrailed", description: "Document-level ACLs" },
+        ],
+        image: "/projects/genarchitect.png",
+        liveUrl: "https://gen-architect.pages.dev/",
+        ctaLabel: "Explore GenArchitect Field Guide",
+        accent: {
+            text: "text-indigo-400",
+            bg: "bg-indigo-500/15",
+            border: "border-indigo-500/30",
+            pill: "text-indigo-300",
+            pillBg: "bg-indigo-500/10",
+            pillBorder: "border-indigo-500/25",
+            btnBg: "bg-indigo-500",
+            btnHover: "hover:bg-indigo-400",
+            glowFrom: "group-hover:from-indigo-500/5",
+            glowTo: "group-hover:to-indigo-500/5",
+            hoverBorder: "hover:border-indigo-500/40",
+            glow: "bg-indigo-500",
+        },
+    },
+    {
         slug: "verticore",
         title: "VertiCore",
         tagline: "Enterprise Agent Architecture Framework",

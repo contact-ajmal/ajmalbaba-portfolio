@@ -30,6 +30,74 @@ export interface ResearchProjectData {
 
 export const researchProjectsData: ResearchProjectData[] = [
     {
+        id: "genarchitect",
+        slug: "genarchitect",
+        title: "GenArchitect",
+        tagline: "Field Guide to Enterprise RAG & AWS AgentCore",
+        status: "Active",
+        description: "Investigating enterprise RAG patterns and autonomous agent orchestration across 9 architectural stages — exploring Bedrock Knowledge Bases, hybrid retrieval with cross-encoder rerankers, Neptune Analytics GraphRAG, and AgentCore Gateway / Runtime deployment.",
+        researchAreas: ["Enterprise RAG", "AWS AgentCore", "Bedrock", "Strands SDK", "GraphRAG", "Multi-Agent Systems", "Security & ACLs"],
+        icon: "Layers",
+        liveUrl: "https://gen-architect.pages.dev/",
+        githubUrl: "https://github.com/contact-ajmal/GenArchitect",
+        hasDetailPage: true,
+        year: "2025",
+        fullDescription: `GenArchitect is an interactive architectural field guide designed to guide engineering teams from naive RAG prototypes to hardened enterprise-grade AI platforms. Grounded in the real-world Meridian enterprise scenario, it deconstructs the 9 architectural evolutions required to operate AI assistants in regulated production environments.
+
+The guide demonstrates production patterns using Amazon Bedrock, AWS AgentCore (Gateway, Runtime, Memory, Observability), OpenSearch Serverless, Neptune Analytics, and the Strands Agents SDK.`,
+        detailedSections: [
+            {
+                title: "From Naive Top-K to Hybrid Precision + Cross-Encoder Reranking",
+                content: "Pure vector similarity frequently misses precise keywords (policy codes, product IDs, legal clauses) while pure keyword search misses semantic meaning. GenArchitect demonstrates hybrid retrieval over OpenSearch Serverless (combining BM25 and dense embeddings) over-fetching ~25 candidates, followed by cross-encoder reranking via Bedrock to prune down to the top-5 highest-precision citations."
+            },
+            {
+                title: "GraphRAG: Relationship Traversal with Neptune Analytics",
+                content: "When answers require multi-hop entity traversal (e.g. connecting internal controls to regulatory mandates and specific products), flat vector search fails. GenArchitect maps how Bedrock extracts entities and relationships during ingestion into an Amazon Neptune Analytics graph, enabling graph traversal query resolution."
+            },
+            {
+                title: "Separation of Memory vs. Source of Truth (Memory-Augmented RAG)",
+                content: "AgentCore Memory provides user continuity (role, preferences, recent questions) but must never be treated as an authoritative source of facts. GenArchitect details the architectural discipline of wiring personal memory and document retrieval as distinct tools with explicit prompt boundaries to eliminate hallucinated policy drift."
+            },
+            {
+                title: "AgentCore Gateway, Multi-Agent Supervisors & Guardrailed Security",
+                content: "Production deployment requires decoupling: AgentCore Gateway exposes disparate knowledge bases as MCP tools with centralized IAM and identity scoping. A Strands supervisor coordinates specialist agents (retrieval, synthesis, compliance review gate), hosted serverlessly on AgentCore Runtime with Bedrock Guardrails, document-level ACL filtering, OpenTelemetry CloudWatch tracing, and regression evaluations."
+            }
+        ],
+        keyComponents: [
+            {
+                title: "9 Evolution Stages",
+                description: "Interactive architectural diagrams and data flows from Naive RAG to Guardrailed Secure RAG.",
+                color: "#6366f1"
+            },
+            {
+                title: "AWS AgentCore Gateway & Runtime",
+                description: "MCP tool exposition, centralized IAM auth, and serverless session-isolated runtime hosting.",
+                color: "#0ea5e9"
+            },
+            {
+                title: "Hybrid Reranker Pipeline",
+                description: "BM25 + dense vector fusion with cross-encoder reranking for maximum retrieval precision.",
+                color: "#14b8a6"
+            },
+            {
+                title: "GraphRAG Knowledge Engine",
+                description: "Entity & relationship extraction backed by Amazon Neptune Analytics graph traversal.",
+                color: "#ec4899"
+            },
+            {
+                title: "Memory vs. Truth Separation",
+                description: "AgentCore long-term user memory paired with strict authoritative document grounding.",
+                color: "#f59e0b"
+            },
+            {
+                title: "Guardrails & Observability",
+                description: "Document-level ACL filtering, Bedrock Guardrails, OpenTelemetry CloudWatch traces, and evaluation suites.",
+                color: "#dc2626"
+            }
+        ],
+        codeAvailability: "GenArchitect is available live as an interactive studio at gen-architect.pages.dev and on GitHub."
+    },
+    {
         id: "cortexshield",
         slug: "cortexshield",
         title: "CortexShield",
