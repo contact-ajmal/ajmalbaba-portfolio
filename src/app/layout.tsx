@@ -8,6 +8,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Navigation } from "@/components/layout/TopNav";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Ajmal Baba — AI Engineer & Cloud Architect",
@@ -20,17 +21,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased bg-[var(--bg)] text-[var(--fg)]">
-        <SmoothScroll>
-          <Navigation />
-          <div className="min-h-screen flex flex-col">
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </SmoothScroll>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const stored = localStorage.getItem('portfolio-theme');
+                  if (stored === 'light' || stored === 'dark') {
+                    document.documentElement.classList.add(stored);
+                  } else {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased bg-[var(--bg)] text-[var(--fg)] selection:bg-[var(--accent)] selection:text-black">
+        <ThemeProvider>
+          <SmoothScroll>
+            <Navigation />
+            <div className="min-h-screen flex flex-col">
+              <main className="flex-grow">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );

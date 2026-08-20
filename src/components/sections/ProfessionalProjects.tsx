@@ -60,10 +60,10 @@ export function ProfessionalProjects() {
                     viewport={{ once: true }}
                     className="mb-20 text-center"
                 >
-                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase mb-4 block">
+                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase mb-4 block font-semibold">
                         Enterprise & Global Scale
                     </span>
-                    <h2 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-8">
+                    <h2 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-8 text-[var(--fg)]">
                         PROFESSIONAL{" "}
                         <span className="text-[var(--accent)]">PROJECTS</span>
                     </h2>
@@ -90,12 +90,12 @@ export function ProfessionalProjects() {
                     ].map((stat, i) => (
                         <div
                             key={i}
-                            className="text-center p-6 border border-[var(--border)] bg-white/[0.02] rounded-sm"
+                            className="text-center p-6 border border-[var(--border)] bg-[var(--bg-card)] rounded-lg shadow-sm"
                         >
                             <div className="text-3xl md:text-4xl font-bold font-mono text-[var(--accent)] mb-2">
                                 {stat.value}
                             </div>
-                            <div className="text-xs font-mono text-[var(--fg-muted)] uppercase tracking-wider">
+                            <div className="text-xs font-mono text-[var(--fg-muted)] uppercase tracking-wider font-medium">
                                 {stat.label}
                             </div>
                         </div>
@@ -118,11 +118,11 @@ export function ProfessionalProjects() {
                             >
                                 {/* Company Header */}
                                 <div className="flex items-center gap-4 mb-10">
-                                    <div className="h-12 w-12 flex items-center justify-center border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-sm text-[var(--accent)]">
+                                    <div className="h-12 w-12 flex items-center justify-center border border-[var(--accent)]/30 bg-[var(--accent-muted)] rounded-lg text-[var(--accent)] shadow-sm">
                                         <Building2 size={22} />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-white">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-[var(--fg)]">
                                             {company}
                                         </h3>
                                         <p className="text-sm font-mono text-[var(--fg-muted)]">
@@ -144,13 +144,13 @@ export function ProfessionalProjects() {
                                                 viewport={{ once: true }}
                                                 transition={{ delay: index * 0.05 }}
                                                 layout
-                                                className={`group relative bg-[#0a0a0a] border border-[var(--border)] rounded-sm overflow-hidden hover:border-[var(--accent)]/40 transition-all duration-500 ${
+                                                className={`group relative bg-[var(--bg-card)] border border-[var(--border)] rounded-xl overflow-hidden hover:border-[var(--accent)]/40 transition-all duration-500 shadow-sm ${
                                                     isExpanded ? "md:col-span-2" : ""
                                                 }`}
                                             >
                                                 {/* Category Tag */}
                                                 <div className="absolute top-4 right-4 z-10">
-                                                    <span className="px-3 py-1 text-[10px] font-mono uppercase tracking-widest border border-[var(--border)] bg-black/80 rounded-full text-[var(--fg-muted)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)]/40 transition-all">
+                                                    <span className="px-3 py-1 text-[10px] font-mono uppercase tracking-widest border border-[var(--border)] bg-[var(--bg-subtle)] rounded-full text-[var(--fg-muted)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)]/40 transition-all">
                                                         {project.category}
                                                     </span>
                                                 </div>
@@ -161,11 +161,11 @@ export function ProfessionalProjects() {
                                                 <div className="p-6 md:p-8">
                                                     <div className="flex items-start gap-4 mb-4">
                                                         {/* Icon */}
-                                                        <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center border border-[var(--border)] bg-white/[0.03] rounded-sm text-[var(--fg-muted)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)]/30 transition-all">
+                                                        <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center border border-[var(--border)] bg-[var(--bg-subtle)] rounded-lg text-[var(--fg-muted)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)]/30 transition-all">
                                                             {iconMap[project.icon] || <Cpu size={24} />}
                                                         </div>
                                                         <div className="flex-1 min-w-0">
-                                                            <h4 className="text-xl font-bold text-white group-hover:text-[var(--accent)] transition-colors mb-1 pr-20">
+                                                            <h4 className="text-xl font-bold text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors mb-1 pr-20">
                                                                 {project.name}
                                                             </h4>
                                                             <p className="text-xs font-mono text-[var(--fg-muted)]">
@@ -182,12 +182,12 @@ export function ProfessionalProjects() {
                                                     </p>
 
                                                     {/* Impact Highlight */}
-                                                    <div className="flex items-start gap-2 mb-6 p-3 bg-[var(--accent)]/[0.04] border border-[var(--accent)]/10 rounded-sm">
+                                                    <div className="flex items-start gap-2 mb-6 p-3 bg-[var(--accent-muted)] border border-[var(--accent)]/20 rounded-lg">
                                                         <ArrowUpRight
                                                             size={14}
                                                             className="text-[var(--accent)] mt-0.5 flex-shrink-0"
                                                         />
-                                                        <p className="text-xs text-[var(--accent)]/80 leading-relaxed">
+                                                        <p className="text-xs text-[var(--accent)] font-medium leading-relaxed">
                                                             {project.impact}
                                                         </p>
                                                     </div>
@@ -197,7 +197,7 @@ export function ProfessionalProjects() {
                                                         {project.techStack.map((tech, i) => (
                                                             <span
                                                                 key={i}
-                                                                className="px-2.5 py-1 text-[10px] font-mono border border-[var(--border)] bg-black/50 rounded-full text-[var(--fg-muted)] group-hover:text-[var(--fg)] group-hover:border-[var(--accent)]/20 transition-all"
+                                                                className="px-2.5 py-1 text-[10px] font-mono border border-[var(--border)] bg-[var(--bg-subtle)] rounded-full text-[var(--fg-muted)] group-hover:text-[var(--fg)] group-hover:border-[var(--accent)]/20 transition-all"
                                                             >
                                                                 {tech}
                                                             </span>
@@ -211,7 +211,7 @@ export function ProfessionalProjects() {
                                                                 isExpanded ? null : project.id
                                                             )
                                                         }
-                                                        className="text-[10px] font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)]"
+                                                        className="text-[10px] font-mono uppercase tracking-widest text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors border-b border-transparent hover:border-[var(--accent)] cursor-pointer"
                                                     >
                                                         {isExpanded ? "[ Collapse ]" : "[ Read More ]"}
                                                     </button>

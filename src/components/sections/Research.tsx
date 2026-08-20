@@ -25,10 +25,10 @@ export function Research() {
                     viewport={{ once: true }}
                     className="mb-20 text-center"
                 >
-                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase mb-4 block">
+                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase mb-4 block font-semibold">
                         Research & Exploration
                     </span>
-                    <h2 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-8">
+                    <h2 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-8 text-[var(--fg)]">
                         SOLVING <span className="text-[var(--accent)]">PROBLEMS</span>
                     </h2>
                     <p className="text-xl text-[var(--fg-muted)] max-w-2xl mx-auto leading-relaxed">
@@ -40,22 +40,22 @@ export function Research() {
                 {/* Research Projects Grid */}
                 <div className="space-y-8">
                     {researchProjectsData.map((project, index) => {
-                        const cardClassName = `group relative bg-[#0a0a0a] border border-[var(--border)] p-8 md:p-10 rounded-sm hover:border-[var(--accent)]/50 transition-all duration-300 block ${project.hasDetailPage ? "cursor-pointer" : ""}`;
+                        const cardClassName = `group relative bg-[var(--bg-card)] border border-[var(--border)] p-8 md:p-10 rounded-xl hover:border-[var(--accent)]/50 transition-all duration-300 block shadow-sm ${project.hasDetailPage ? "cursor-pointer" : ""}`;
 
                         const cardContent = (
                             <>
                                 {/* Status Badge */}
                                 <div className="absolute top-6 right-6 flex items-center gap-3">
                                     {project.hasDetailPage && (
-                                        <span className="px-3 py-1 text-xs font-mono rounded-full border border-[var(--accent)]/50 text-[var(--accent)] bg-[var(--accent)]/10">
+                                        <span className="px-3 py-1 text-xs font-mono rounded-full border border-[var(--accent)]/50 text-[var(--accent)] bg-[var(--accent-muted)] font-medium">
                                             View Details →
                                         </span>
                                     )}
-                                    <span className={`px-3 py-1 text-xs font-mono rounded-full border ${project.status === "Active"
-                                        ? "border-green-500/50 text-green-400 bg-green-500/10"
+                                    <span className={`px-3 py-1 text-xs font-mono rounded-full border font-medium ${project.status === "Active"
+                                        ? "border-green-500/50 text-green-500 bg-green-500/10"
                                         : project.status === "Published"
-                                            ? "border-blue-500/50 text-blue-400 bg-blue-500/10"
-                                            : "border-yellow-500/50 text-yellow-400 bg-yellow-500/10"
+                                            ? "border-blue-500/50 text-blue-500 bg-blue-500/10"
+                                            : "border-yellow-500/50 text-yellow-500 bg-yellow-500/10"
                                         }`}>
                                         {project.status}
                                     </span>
@@ -63,13 +63,13 @@ export function Research() {
 
                                 <div className="flex flex-col md:flex-row gap-6 md:gap-10">
                                     {/* Icon */}
-                                    <div className="text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">
+                                    <div className="text-[var(--accent)] opacity-80 group-hover:opacity-100 transition-opacity">
                                         {iconMap[project.icon] || <Cpu size={28} />}
                                     </div>
 
                                     {/* Content */}
                                     <div className="flex-1">
-                                        <h3 className="text-2xl md:text-3xl font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">
+                                        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
                                             {project.title}
                                         </h3>
                                         <p className="text-[var(--fg-muted)] font-mono text-sm mb-4">
@@ -82,7 +82,7 @@ export function Research() {
                                         {/* Research Areas */}
                                         <div className="flex flex-wrap gap-2 mb-6">
                                             {project.researchAreas.map((area, i) => (
-                                                <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs font-mono text-[var(--fg-muted)] group-hover:text-[var(--fg)] group-hover:border-[var(--accent)]/30 transition-all">
+                                                <span key={i} className="px-3 py-1 bg-[var(--bg-subtle)] border border-[var(--border)] rounded text-xs font-mono text-[var(--fg-muted)] group-hover:text-[var(--fg)] group-hover:border-[var(--accent)]/30 transition-all">
                                                     {area}
                                                 </span>
                                             ))}
@@ -96,7 +96,7 @@ export function Research() {
                                                         href={project.liveUrl}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="flex items-center gap-2 text-sm text-[var(--accent)] hover:underline"
+                                                        className="flex items-center gap-2 text-sm text-[var(--accent)] font-medium hover:underline"
                                                         onClick={(e) => e.stopPropagation()}
                                                     >
                                                         View Project
@@ -107,10 +107,10 @@ export function Research() {
                                                         href={project.githubUrl}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="flex items-center gap-2 text-sm text-[var(--fg-muted)] hover:text-white"
+                                                        className="flex items-center gap-2 text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors"
                                                         onClick={(e) => e.stopPropagation()}
                                                     >
-                                                        Source Code
+                                                        Source Code ↗
                                                     </a>
                                                 )}
                                             </div>
@@ -154,7 +154,7 @@ export function Research() {
                     </p>
                     <Link
                         href="#contact"
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--accent)] text-black font-bold rounded-full hover:bg-white transition-colors"
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--accent)] text-black font-bold rounded-full hover:bg-[var(--fg)] hover:text-[var(--bg)] transition-colors shadow-sm"
                     >
                         Let's Connect
                     </Link>

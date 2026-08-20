@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ResearchProjectData } from "@/lib/research-projects";
-import { ArrowLeft, Lock, Linkedin, Cpu, Shield, Brain, Database, Clock, FileSearch } from "lucide-react";
+import { ArrowLeft, Lock, Linkedin, Cpu, Shield, Brain, Database, Clock, FileSearch, ExternalLink } from "lucide-react";
 
 const componentIcons: { [key: string]: React.ReactNode } = {
     "Control Plane": <Shield size={24} />,
@@ -17,13 +17,13 @@ const componentIcons: { [key: string]: React.ReactNode } = {
 
 export function ResearchDetailClient({ project }: { project: ResearchProjectData }) {
     return (
-        <div className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">
+        <div className="min-h-screen bg-[var(--bg)] text-[var(--fg)] transition-colors duration-300">
 
             {/* Back Navigation */}
-            <div className="fixed top-8 left-8 z-50 mix-blend-difference">
+            <div className="fixed top-8 left-8 z-50">
                 <Link
                     href="/research"
-                    className="flex items-center gap-2 text-sm font-mono uppercase tracking-wider hover:text-[var(--accent)] transition-colors"
+                    className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider px-4 py-2 rounded-full bg-[var(--bg-card)]/90 backdrop-blur border border-[var(--border)] text-[var(--fg)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all shadow-md"
                 >
                     <ArrowLeft size={16} /> Back to Research
                 </Link>
@@ -39,11 +39,11 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-[var(--border)] pb-8">
                         <div>
                             <div className="flex items-center gap-4 mb-4">
-                                <span className={`px-3 py-1 text-xs font-mono rounded-full border ${project.status === "Active"
-                                    ? "border-green-500/50 text-green-400 bg-green-500/10"
+                                <span className={`px-3 py-1 text-xs font-mono rounded-full border font-medium ${project.status === "Active"
+                                    ? "border-green-500/50 text-green-500 bg-green-500/10"
                                     : project.status === "Published"
-                                        ? "border-blue-500/50 text-blue-400 bg-blue-500/10"
-                                        : "border-yellow-500/50 text-yellow-400 bg-yellow-500/10"
+                                        ? "border-blue-500/50 text-blue-500 bg-blue-500/10"
+                                        : "border-yellow-500/50 text-yellow-500 bg-yellow-500/10"
                                     }`}>
                                     {project.status}
                                 </span>
@@ -53,17 +53,30 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                                     </span>
                                 )}
                             </div>
-                            <h1 className="text-[clamp(3rem,6vw,6rem)] leading-none mb-4">{project.title}</h1>
+                            <h1 className="text-[clamp(3rem,6vw,6rem)] leading-none mb-4 font-bold text-[var(--fg)]">{project.title}</h1>
                             <p className="text-xl text-[var(--fg-muted)] max-w-2xl">{project.tagline}</p>
+                        </div>
+
+                        <div className="flex gap-4">
+                            {project.liveUrl && (
+                                <a
+                                    href={project.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 px-6 py-3 border border-[var(--border)] bg-[var(--bg-card)] rounded-full hover:bg-[var(--fg)] hover:text-[var(--bg)] transition-colors font-medium text-sm shadow-sm"
+                                >
+                                    <ExternalLink size={16} /> Live Project ↗
+                                </a>
+                            )}
                         </div>
                     </div>
 
                     {/* Research Areas */}
-                    <div className="flex flex-wrap gap-3 mb-12">
+                    <div className="flex flex-wrap gap-2.5 mb-12">
                         {project.researchAreas.map((area, i) => (
                             <span
                                 key={i}
-                                className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-mono text-[var(--fg-muted)]"
+                                className="px-4 py-1.5 bg-[var(--bg-subtle)] border border-[var(--border)] rounded-full text-xs font-mono text-[var(--fg-muted)]"
                             >
                                 {area}
                             </span>
@@ -76,11 +89,11 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="mb-12 p-6 bg-[#0a0a0a] border border-[var(--accent)]/30 rounded-lg flex items-start gap-4"
+                            className="mb-12 p-6 bg-[var(--bg-card)] border border-[var(--accent)]/30 rounded-xl flex items-start gap-4 shadow-sm"
                         >
                             <Lock className="text-[var(--accent)] mt-1 flex-shrink-0" size={20} />
                             <div>
-                                <h4 className="font-bold mb-2">Code Availability</h4>
+                                <h4 className="font-bold mb-2 text-[var(--fg)]">Code Availability</h4>
                                 <p className="text-[var(--fg-muted)] text-sm leading-relaxed">
                                     {project.codeAvailability}
                                 </p>
@@ -88,7 +101,7 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                                     href="https://linkedin.com/in/ajmalnazirbaba/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 mt-4 text-sm text-[var(--accent)] hover:underline"
+                                    className="inline-flex items-center gap-2 mt-4 text-sm text-[var(--accent)] font-medium hover:underline"
                                 >
                                     <Linkedin size={14} />
                                     Request Access
@@ -103,7 +116,7 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                             initial={{ opacity: 0, scale: 0.98 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className="relative w-full rounded-lg overflow-hidden bg-white p-4 md:p-8 mb-16"
+                            className="relative w-full rounded-xl overflow-hidden bg-white p-4 md:p-8 mb-16 border border-[var(--border)] shadow-md"
                         >
                             <Image
                                 src={project.architectureImage}
@@ -129,8 +142,8 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                     <div className="lg:col-span-2 space-y-16">
                         {/* Overview */}
                         <div>
-                            <h2 className="text-3xl font-bold mb-8">Overview</h2>
-                            <div className="prose prose-invert max-w-none">
+                            <h2 className="text-3xl font-bold mb-8 text-[var(--fg)]">Overview</h2>
+                            <div className="prose max-w-none">
                                 {project.fullDescription?.split('\n\n').map((paragraph, i) => (
                                     <p key={i} className="text-lg text-[var(--fg-muted)] leading-relaxed mb-6">
                                         {paragraph}
@@ -153,22 +166,22 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                     {/* Sidebar Info */}
                     <div className="lg:col-span-1">
                         <div className="sticky top-32 space-y-8">
-                            <div className="p-6 bg-[#0a0a0a] border border-[var(--border)] rounded-lg">
-                                <h3 className="text-lg font-bold mb-4">Project Details</h3>
+                            <div className="p-6 bg-[var(--bg-card)] border border-[var(--border)] rounded-xl shadow-sm">
+                                <h3 className="text-lg font-bold mb-4 text-[var(--fg)]">Project Details</h3>
                                 <dl className="space-y-4 text-sm">
                                     <div>
-                                        <dt className="text-[var(--fg-muted)]">Status</dt>
-                                        <dd className="font-mono">{project.status}</dd>
+                                        <dt className="text-[var(--fg-muted)] font-mono text-xs uppercase">Status</dt>
+                                        <dd className="font-mono font-medium">{project.status}</dd>
                                     </div>
                                     {project.year && (
                                         <div>
-                                            <dt className="text-[var(--fg-muted)]">Timeline</dt>
-                                            <dd className="font-mono">{project.year}</dd>
+                                            <dt className="text-[var(--fg-muted)] font-mono text-xs uppercase">Timeline</dt>
+                                            <dd className="font-mono font-medium">{project.year}</dd>
                                         </div>
                                     )}
                                     <div>
-                                        <dt className="text-[var(--fg-muted)]">Focus Areas</dt>
-                                        <dd className="font-mono">{project.researchAreas.length} domains</dd>
+                                        <dt className="text-[var(--fg-muted)] font-mono text-xs uppercase">Focus Areas</dt>
+                                        <dd className="font-mono font-medium">{project.researchAreas.length} domains</dd>
                                     </div>
                                 </dl>
                             </div>
@@ -186,7 +199,7 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                         viewport={{ once: true }}
                         className="mb-16"
                     >
-                        <h2 className="text-4xl font-bold mb-4">Key Components</h2>
+                        <h2 className="text-4xl font-bold mb-4 text-[var(--fg)]">Key Components</h2>
                         <p className="text-[var(--fg-muted)] text-lg max-w-2xl">
                             The architecture is built around these core systems, each designed for specific responsibilities in the agentic workflow.
                         </p>
@@ -200,7 +213,7 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group p-6 bg-[#0a0a0a] border border-[var(--border)] rounded-lg hover:border-opacity-50 transition-all duration-300"
+                                className="group p-6 bg-[var(--bg-card)] border border-[var(--border)] rounded-xl hover:border-opacity-50 transition-all duration-300 shadow-sm"
                                 style={{ borderColor: `${component.color}30` }}
                             >
                                 <div
@@ -209,7 +222,7 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
                                 >
                                     {componentIcons[component.title] || <Cpu size={24} />}
                                 </div>
-                                <h3 className="text-xl font-bold mb-2" style={{ color: component.color }}>
+                                <h3 className="text-xl font-bold mb-2 text-[var(--fg)]" style={{ color: component.color }}>
                                     {component.title}
                                 </h3>
                                 <p className="text-[var(--fg-muted)] text-sm leading-relaxed">
@@ -222,10 +235,10 @@ export function ResearchDetailClient({ project }: { project: ResearchProjectData
             )}
 
             {/* Footer Navigation */}
-            <section className="py-32 border-t border-[var(--border)] text-center">
+            <section className="py-32 border-t border-[var(--border)] text-center bg-[var(--bg-subtle)]">
                 <Link href="/research" className="inline-block group">
-                    <span className="block text-[var(--fg-muted)] mb-2 text-sm uppercase tracking-widest">Back to</span>
-                    <span className="text-4xl md:text-6xl font-medium group-hover:text-[var(--accent)] transition-colors">
+                    <span className="block text-[var(--fg-muted)] mb-2 text-sm uppercase tracking-widest font-mono">Back to</span>
+                    <span className="text-4xl md:text-6xl font-bold text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
                         All Research
                     </span>
                 </Link>

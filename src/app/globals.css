@@ -1,17 +1,35 @@
 @import "tailwindcss";
 
 /* ========================================
-   INDUSTRIAL DESIGN SYSTEM
+   DESIGN SYSTEM - THEME TOKENS
    ======================================== */
 
-:root {
-  /* Colors */
+:root,
+html.dark {
+  /* Dark Theme (Default) */
   --bg: #050505;
-  --fg: #ffffff;
-  --fg-muted: #888888;
-  --accent: #2CF8FF;
-  --accent-glow: rgba(44, 248, 255, 0.4);
+  --bg-subtle: #0c0c0c;
+  --bg-card: #111111;
+  --bg-hover: #171717;
+  
+  --fg: #f5f5f5;
+  --fg-muted: #8e8e8e;
+  --fg-dim: #555555;
+  
+  --accent: #2cf8ff;
+  --accent-muted: rgba(44, 248, 255, 0.15);
+  --accent-glow: rgba(44, 248, 255, 0.35);
+  
   --border: #1a1a1a;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  
+  --nav-bg: rgba(8, 8, 8, 0.75);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --nav-pill: #1c1c1c;
+
+  --modal-overlay: rgba(0, 0, 0, 0.8);
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
 
   /* Fonts */
   --font-sans: 'DM Sans', sans-serif;
@@ -19,6 +37,33 @@
 
   /* Spacing */
   --container-padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+html.light {
+  /* Light Theme */
+  --bg: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-hover: #e2e8f0;
+  
+  --fg: #090d16;
+  --fg-muted: #475569;
+  --fg-dim: #94a3b8;
+  
+  --accent: #0284c7;
+  --accent-muted: rgba(2, 132, 199, 0.12);
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  
+  --border: #e2e8f0;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.2);
+  
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --nav-border: rgba(0, 0, 0, 0.09);
+  --nav-pill: #e2e8f0;
+
+  --modal-overlay: rgba(15, 23, 42, 0.6);
+  --card-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.08), 0 2px 10px -2px rgba(0, 0, 0, 0.04);
 }
 
 @theme inline {
@@ -35,12 +80,17 @@
    BASE STYLES
    ======================================== */
 
+* {
+  border-color: var(--border);
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -50,13 +100,14 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
+  color: var(--fg);
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: #000000;
 }
 
 /* ========================================
@@ -74,9 +125,11 @@ h6 {
 }
 
 .glass-nav {
-  background: rgba(5, 5, 5, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--nav-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 .glow-text {

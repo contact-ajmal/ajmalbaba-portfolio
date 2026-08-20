@@ -42,16 +42,16 @@ export function Story() {
                     viewport={{ once: true }}
                     className="mb-20"
                 >
-                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase mb-4 block">
+                    <span className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase mb-4 block font-semibold">
                         The Philosophy
                     </span>
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-[var(--fg)]">
                         Data as Foundation.
                         <br />
                         <span className="text-[var(--fg-muted)]">AI as Catalyst.</span>
                     </h2>
                     <p className="text-xl text-[var(--fg-muted)] max-w-2xl leading-relaxed">
-                        I don't just build pipelines — I build the <span className="text-white">teams and platforms</span> that power them.
+                        I don't just build pipelines — I build the <span className="text-[var(--fg)] font-medium">teams and platforms</span> that power them.
                         Every project starts with a deep understanding of the data landscape, enabling us to tackle analytical challenges once thought impossible.
                     </p>
                 </motion.div>
@@ -72,22 +72,22 @@ export function Story() {
                                 className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-start md:items-center gap-8 md:gap-16`}
                             >
                                 {/* Timeline Dot */}
-                                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-[30px] h-[30px] bg-[#0a0a0a] border-2 border-[var(--accent)] rounded-full flex items-center justify-center z-10">
+                                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-[30px] h-[30px] bg-[var(--bg-card)] border-2 border-[var(--accent)] rounded-full flex items-center justify-center z-10 shadow-sm">
                                     <div className="w-3 h-3 bg-[var(--accent)] rounded-full animate-pulse" />
                                 </div>
 
                                 {/* Content Card */}
                                 <div className={`ml-12 md:ml-0 md:w-[calc(50%-3rem)] ${index % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"}`}>
-                                    <div className="group bg-white/5 border border-[var(--border)] p-6 md:p-8 rounded-lg hover:border-[var(--accent)]/50 transition-all duration-300">
+                                    <div className="group bg-[var(--bg-card)] border border-[var(--border)] p-6 md:p-8 rounded-lg hover:border-[var(--accent)]/50 transition-all duration-300 shadow-sm">
                                         <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
                                             <span className="text-[var(--accent)] font-mono text-2xl font-bold">
                                                 {milestone.year}
                                             </span>
-                                            <div className="text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">
+                                            <div className="text-[var(--accent)] opacity-70 group-hover:opacity-100 transition-opacity">
                                                 {milestone.icon}
                                             </div>
                                         </div>
-                                        <h3 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-[var(--accent)] transition-colors">
+                                        <h3 className="text-xl md:text-2xl font-bold mb-3 text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
                                             {milestone.title}
                                         </h3>
                                         <p className="text-[var(--fg-muted)] leading-relaxed">
@@ -108,23 +108,23 @@ export function Story() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-32 p-8 md:p-12 bg-gradient-to-br from-[var(--accent)]/10 via-purple-500/5 to-transparent border border-[var(--accent)]/30 rounded-xl relative overflow-hidden"
+                    className="mt-32 p-8 md:p-12 bg-gradient-to-br from-[var(--accent)]/10 via-purple-500/5 to-transparent border border-[var(--accent)]/30 rounded-xl relative overflow-hidden shadow-lg"
                 >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent)] opacity-10 blur-[80px] rounded-full" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent)] opacity-10 blur-[80px] rounded-full pointer-events-none" />
 
                     <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <Sparkles className="text-[var(--accent)] mb-6" size={40} />
-                            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-[var(--fg)]">
                                 AI Changed <span className="text-[var(--accent)]">Everything</span>
                             </h3>
                             <p className="text-lg text-[var(--fg-muted)] leading-relaxed mb-6">
                                 What once took weeks now takes hours. AI Agents don't replace creativity —
-                                they <span className="text-white">amplify it</span>. I can prototype,
+                                they <span className="text-[var(--fg)] font-medium">amplify it</span>. I can prototype,
                                 iterate, and ship at a pace that felt impossible just two years ago.
                             </p>
                             <p className="text-lg text-[var(--fg-muted)] leading-relaxed">
-                                This portfolio? Built entirely with <span className="text-white">Vibe Coding</span> —
+                                This portfolio? Built entirely with <span className="text-[var(--fg)] font-medium">Vibe Coding</span> —
                                 an intuitive, AI-assisted flow where ideas become reality in real-time.
                             </p>
                         </div>
@@ -141,7 +141,7 @@ export function Story() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="flex justify-between items-center p-4 bg-black/50 border border-[var(--border)] rounded-lg"
+                                    className="flex justify-between items-center p-4 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg shadow-sm"
                                 >
                                     <span className="text-[var(--fg-muted)]">{stat.label}</span>
                                     <span className="text-[var(--accent)] font-mono font-bold">{stat.value}</span>
@@ -154,7 +154,7 @@ export function Story() {
                     <div className="mt-12 flex justify-center">
                         <Link
                             href="/projects"
-                            className="group flex items-center gap-3 px-8 py-4 bg-[var(--accent)] text-black font-bold rounded-full hover:bg-white transition-colors"
+                            className="group flex items-center gap-3 px-8 py-4 bg-[var(--accent)] text-black font-bold rounded-full hover:bg-[var(--fg)] hover:text-[var(--bg)] transition-colors shadow-md"
                         >
                             See What I've Built
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

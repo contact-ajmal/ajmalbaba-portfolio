@@ -52,7 +52,7 @@ export function Expertise() {
                     viewport={{ once: true }}
                     className="mb-20 text-center"
                 >
-                    <h2 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-8">
+                    <h2 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-8 text-[var(--fg)]">
                         TECHNICAL <span className="text-[var(--accent)]">EXPERTISE</span>
                     </h2>
                     <p className="text-xl text-[var(--fg-muted)] max-w-2xl mx-auto">
@@ -68,9 +68,9 @@ export function Expertise() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative bg-[#0a0a0a] border border-[var(--border)] p-8 md:p-10 rounded-sm hover:border-[var(--accent)] transition-all duration-300"
+                            className="group relative bg-[var(--bg-card)] border border-[var(--border)] p-8 md:p-10 rounded-xl hover:border-[var(--accent)] transition-all duration-300 shadow-sm"
                         >
-                            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-[var(--accent)]">
+                            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-[var(--accent)] pointer-events-none">
                                 {category.icon}
                             </div>
 
@@ -78,16 +78,16 @@ export function Expertise() {
                                 <div className="mb-6 text-[var(--accent)]">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors">
+                                <h3 className="text-2xl font-bold mb-4 text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
                                     {category.title}
                                 </h3>
-                                <p className="text-[var(--fg-muted)] mb-8 h-12">
+                                <p className="text-[var(--fg-muted)] mb-8 min-h-[3rem] leading-relaxed">
                                     {category.description}
                                 </p>
 
                                 <div className="flex flex-wrap gap-2">
                                     {category.skills.map((skill, i) => (
-                                        <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded text-sm text-[var(--fg-muted)] group-hover:text-[var(--fg)] group-hover:border-[var(--accent)]/30 transition-all">
+                                        <span key={i} className="px-3 py-1 bg-[var(--bg-subtle)] border border-[var(--border)] rounded text-xs font-mono text-[var(--fg-muted)] group-hover:text-[var(--fg)] group-hover:border-[var(--accent)]/30 transition-all">
                                             {skill}
                                         </span>
                                     ))}
